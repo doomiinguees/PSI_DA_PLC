@@ -19,7 +19,6 @@ namespace CineGuest
             tabSala.RowCount = 30;
             int[,] data = new int[10,30];
 
-
         }
 
         private void AtendimentoForm_Load(object sender, EventArgs e)
