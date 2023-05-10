@@ -12,3 +12,17 @@ C:\Users\dadom\OneDrive\Ambiente de Trabalho\IPLeiria\segundo_semestre\Desenvolv
 C:\Users\dadom\OneDrive\Ambiente de Trabalho\IPLeiria\segundo_semestre\Desenvolvimento_de_Aplicações\Prático_Laboral\FormsPanel\CineGuest\obj\Debug\CineGuest.AtendimentoForm.resources
 C:\Users\dadom\OneDrive\Ambiente de Trabalho\IPLeiria\segundo_semestre\Desenvolvimento_de_Aplicações\Prático_Laboral\FormsPanel\CineGuest\obj\Debug\CineGuest.CinemaForm.resources
 C:\Users\dadom\OneDrive\Ambiente de Trabalho\IPLeiria\segundo_semestre\Desenvolvimento_de_Aplicações\Prático_Laboral\FormsPanel\CineGuest\obj\Debug\CineGuest.FilmeForm.resources
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\bin\Debug\CineGuest.exe.config
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\bin\Debug\CineGuest.exe
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\bin\Debug\CineGuest.pdb
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.csproj.AssemblyReference.cache
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.csproj.SuggestedBindingRedirects.cache
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.AtendimentoForm.resources
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.CinemaForm.resources
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.FilmeForm.resources
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.Form1.resources
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.Properties.Resources.resources
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.csproj.GenerateResource.cache
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.csproj.CoreCompileInputs.cache
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.exe
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.pdb

@@ -30,9 +30,11 @@
         {
             this.lblSessao = new System.Windows.Forms.Label();
             this.gbSessao = new System.Windows.Forms.GroupBox();
-            this.gbSala = new System.Windows.Forms.GroupBox();
             this.tabSala = new System.Windows.Forms.TableLayoutPanel();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.gbSala = new System.Windows.Forms.GroupBox();
             this.gbSessao.SuspendLayout();
+            this.tabSala.SuspendLayout();
             this.gbSala.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,34 +56,43 @@
             this.gbSessao.TabIndex = 1;
             this.gbSessao.TabStop = false;
             // 
+            // tabSala
+            // 
+            this.tabSala.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tabSala.ColumnCount = 1;
+            this.tabSala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tabSala.Controls.Add(this.vScrollBar1, 0, 0);
+            this.tabSala.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tabSala.Location = new System.Drawing.Point(6, 21);
+            this.tabSala.Name = "tabSala";
+            this.tabSala.RowCount = 1;
+            this.tabSala.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tabSala.Size = new System.Drawing.Size(915, 624);
+            this.tabSala.TabIndex = 0;
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(0, 0);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(36, 611);
+            this.vScrollBar1.TabIndex = 0;
+            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
+            // 
             // gbSala
             // 
             this.gbSala.Controls.Add(this.tabSala);
-            this.gbSala.Location = new System.Drawing.Point(249, 31);
+            this.gbSala.Location = new System.Drawing.Point(235, 31);
             this.gbSala.Name = "gbSala";
-            this.gbSala.Size = new System.Drawing.Size(695, 547);
+            this.gbSala.Size = new System.Drawing.Size(927, 651);
             this.gbSala.TabIndex = 1;
             this.gbSala.TabStop = false;
             this.gbSala.Text = "Sala";
-            // 
-            // tabSala
-            // 
-            this.tabSala.ColumnCount = 2;
-            this.tabSala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tabSala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tabSala.Location = new System.Drawing.Point(3, 18);
-            this.tabSala.Name = "tabSala";
-            this.tabSala.RowCount = 2;
-            this.tabSala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tabSala.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tabSala.Size = new System.Drawing.Size(200, 100);
-            this.tabSala.TabIndex = 0;
             // 
             // AtendimentoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 600);
+            this.ClientSize = new System.Drawing.Size(1174, 694);
             this.Controls.Add(this.gbSala);
             this.Controls.Add(this.gbSessao);
             this.Name = "AtendimentoForm";
@@ -89,6 +100,7 @@
             this.Load += new System.EventHandler(this.AtendimentoForm_Load);
             this.gbSessao.ResumeLayout(false);
             this.gbSessao.PerformLayout();
+            this.tabSala.ResumeLayout(false);
             this.gbSala.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -98,7 +110,8 @@
 
         private System.Windows.Forms.Label lblSessao;
         private System.Windows.Forms.GroupBox gbSessao;
-        private System.Windows.Forms.GroupBox gbSala;
         private System.Windows.Forms.TableLayoutPanel tabSala;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.GroupBox gbSala;
     }
 }
