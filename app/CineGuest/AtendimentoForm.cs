@@ -32,7 +32,7 @@ namespace CineGuest
 
             tabSala.SuspendLayout();
             tabSala.Controls.Clear();
-            int dez = 10;
+            int dez = 14;
             int trinta = 30;
             tabSala.ColumnCount = dez;
             tabSala.RowCount = trinta;
@@ -52,16 +52,16 @@ namespace CineGuest
             }
 
             tabSala.ResumeLayout();
+            tabSala.AutoScroll = true;
         }
         
-        private void butao_Click()
+        private void butao_Click(object sender, ScrollEventArgs e)
         {
             BackColor = Color.Red;
         }
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-
         }
     }
 }
