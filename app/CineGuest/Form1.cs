@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 
 namespace CineGuest
 {
@@ -21,6 +22,22 @@ namespace CineGuest
             cbUser.Items.Add("qsabjsjfl");
             cbUser.Items.Add("qsabjsjfl");
 
+            /*
+             * busca dados das sessoes e preenche a main
+
+            for (int i = 0; i < linha; i++)
+            {
+                for (int j = 0; j < coluna; j++)
+                {
+                    Button butao = new Button();
+                    butao.Size = new Size(40, 25);
+                    butao.Text = (char)(i + 65) + " | " + (j + 1);
+                    tabSala.Controls.Add(butao, j, i);
+
+                    butao.Click += Butao_Click;
+                }
+            }
+            */
         }
 
         private void cinemaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,8 +54,7 @@ namespace CineGuest
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AtendimentoForm atendForm = new AtendimentoForm();
-            atendForm.ShowDialog();
+            
         }
     }
 }

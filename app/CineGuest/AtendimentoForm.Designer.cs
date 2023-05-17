@@ -31,10 +31,12 @@
             this.lblSessao = new System.Windows.Forms.Label();
             this.gbSessao = new System.Windows.Forms.GroupBox();
             this.tabSala = new System.Windows.Forms.TableLayoutPanel();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.gbSala = new System.Windows.Forms.GroupBox();
+            this.btnMainMenu = new System.Windows.Forms.Button();
+            this.btnFinCompra = new System.Windows.Forms.Button();
+            this.lbBancos = new System.Windows.Forms.ListBox();
+            this.cbCliente = new System.Windows.Forms.ComboBox();
             this.gbSessao.SuspendLayout();
-            this.tabSala.SuspendLayout();
             this.gbSala.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +63,6 @@
             this.tabSala.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tabSala.ColumnCount = 1;
             this.tabSala.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tabSala.Controls.Add(this.vScrollBar1, 0, 0);
             this.tabSala.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tabSala.Location = new System.Drawing.Point(6, 21);
             this.tabSala.Name = "tabSala";
@@ -69,14 +70,6 @@
             this.tabSala.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tabSala.Size = new System.Drawing.Size(915, 624);
             this.tabSala.TabIndex = 0;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(0, 0);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(36, 611);
-            this.vScrollBar1.TabIndex = 0;
-            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
             // gbSala
             // 
@@ -88,11 +81,52 @@
             this.gbSala.TabStop = false;
             this.gbSala.Text = "Sala";
             // 
+            // btnMainMenu
+            // 
+            this.btnMainMenu.Location = new System.Drawing.Point(29, 659);
+            this.btnMainMenu.Name = "btnMainMenu";
+            this.btnMainMenu.Size = new System.Drawing.Size(200, 23);
+            this.btnMainMenu.TabIndex = 2;
+            this.btnMainMenu.Text = "Voltar ao Menu Principal";
+            this.btnMainMenu.UseVisualStyleBackColor = true;
+            this.btnMainMenu.Click += new System.EventHandler(this.btnMainMenu_Click);
+            // 
+            // btnFinCompra
+            // 
+            this.btnFinCompra.Location = new System.Drawing.Point(29, 379);
+            this.btnFinCompra.Name = "btnFinCompra";
+            this.btnFinCompra.Size = new System.Drawing.Size(200, 23);
+            this.btnFinCompra.TabIndex = 3;
+            this.btnFinCompra.Text = "Finalizar compra";
+            this.btnFinCompra.UseVisualStyleBackColor = true;
+            this.btnFinCompra.Click += new System.EventHandler(this.btnFinCompra_Click);
+            // 
+            // lbBancos
+            // 
+            this.lbBancos.FormattingEnabled = true;
+            this.lbBancos.ItemHeight = 16;
+            this.lbBancos.Location = new System.Drawing.Point(29, 264);
+            this.lbBancos.Name = "lbBancos";
+            this.lbBancos.Size = new System.Drawing.Size(200, 100);
+            this.lbBancos.TabIndex = 4;
+            // 
+            // cbCliente
+            // 
+            this.cbCliente.FormattingEnabled = true;
+            this.cbCliente.Location = new System.Drawing.Point(29, 220);
+            this.cbCliente.Name = "cbCliente";
+            this.cbCliente.Size = new System.Drawing.Size(200, 24);
+            this.cbCliente.TabIndex = 5;
+            // 
             // AtendimentoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 694);
+            this.Controls.Add(this.cbCliente);
+            this.Controls.Add(this.lbBancos);
+            this.Controls.Add(this.btnFinCompra);
+            this.Controls.Add(this.btnMainMenu);
             this.Controls.Add(this.gbSala);
             this.Controls.Add(this.gbSessao);
             this.Name = "AtendimentoForm";
@@ -100,7 +134,6 @@
             this.Load += new System.EventHandler(this.AtendimentoForm_Load);
             this.gbSessao.ResumeLayout(false);
             this.gbSessao.PerformLayout();
-            this.tabSala.ResumeLayout(false);
             this.gbSala.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -111,7 +144,10 @@
         private System.Windows.Forms.Label lblSessao;
         private System.Windows.Forms.GroupBox gbSessao;
         private System.Windows.Forms.TableLayoutPanel tabSala;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.GroupBox gbSala;
+        private System.Windows.Forms.Button btnMainMenu;
+        private System.Windows.Forms.Button btnFinCompra;
+        private System.Windows.Forms.ListBox lbBancos;
+        private System.Windows.Forms.ComboBox cbCliente;
     }
 }

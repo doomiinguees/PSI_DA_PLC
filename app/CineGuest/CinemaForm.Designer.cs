@@ -29,26 +29,33 @@
         private void InitializeComponent()
         {
             this.gbDadosCinema = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbNomeCinema = new System.Windows.Forms.TextBox();
+            this.btnUpdateCinema = new System.Windows.Forms.Button();
+            this.tbEmailCinema = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tbMoradalCinema = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbEmailCinemaa = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tbNomeCinema = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbAdicionarSala = new System.Windows.Forms.GroupBox();
+            this.btnAddSala = new System.Windows.Forms.Button();
             this.tbLinhasSala = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbColunasSala = new System.Windows.Forms.TextBox();
             this.lbl5 = new System.Windows.Forms.Label();
             this.tbNomeSala = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.lbNome = new System.Windows.Forms.ListBox();
+            this.lbColuna = new System.Windows.Forms.ListBox();
+            this.lbLinha = new System.Windows.Forms.ListBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.gbDadosCinema.SuspendLayout();
             this.gbAdicionarSala.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDadosCinema
             // 
-            this.gbDadosCinema.Controls.Add(this.tbEmailCinemaa);
+            this.gbDadosCinema.Controls.Add(this.btnUpdateCinema);
+            this.gbDadosCinema.Controls.Add(this.tbEmailCinema);
             this.gbDadosCinema.Controls.Add(this.label3);
             this.gbDadosCinema.Controls.Add(this.tbMoradalCinema);
             this.gbDadosCinema.Controls.Add(this.label2);
@@ -56,26 +63,36 @@
             this.gbDadosCinema.Controls.Add(this.label1);
             this.gbDadosCinema.Location = new System.Drawing.Point(32, 24);
             this.gbDadosCinema.Name = "gbDadosCinema";
-            this.gbDadosCinema.Size = new System.Drawing.Size(262, 229);
+            this.gbDadosCinema.Size = new System.Drawing.Size(262, 243);
             this.gbDadosCinema.TabIndex = 0;
             this.gbDadosCinema.TabStop = false;
             this.gbDadosCinema.Text = "Dados do cinema";
             // 
-            // label1
+            // btnUpdateCinema
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nome";
+            this.btnUpdateCinema.Location = new System.Drawing.Point(161, 214);
+            this.btnUpdateCinema.Name = "btnUpdateCinema";
+            this.btnUpdateCinema.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateCinema.TabIndex = 7;
+            this.btnUpdateCinema.Text = "Atualizar";
+            this.btnUpdateCinema.UseVisualStyleBackColor = true;
+            this.btnUpdateCinema.Click += new System.EventHandler(this.btnUpdateCinema_Click);
             // 
-            // tbNomeCinema
+            // tbEmailCinema
             // 
-            this.tbNomeCinema.Location = new System.Drawing.Point(22, 52);
-            this.tbNomeCinema.Name = "tbNomeCinema";
-            this.tbNomeCinema.Size = new System.Drawing.Size(215, 22);
-            this.tbNomeCinema.TabIndex = 2;
+            this.tbEmailCinema.Location = new System.Drawing.Point(22, 181);
+            this.tbEmailCinema.Name = "tbEmailCinema";
+            this.tbEmailCinema.Size = new System.Drawing.Size(215, 22);
+            this.tbEmailCinema.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(22, 162);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Email";
             // 
             // tbMoradalCinema
             // 
@@ -93,24 +110,25 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Morada";
             // 
-            // tbEmailCinemaa
+            // tbNomeCinema
             // 
-            this.tbEmailCinemaa.Location = new System.Drawing.Point(22, 181);
-            this.tbEmailCinemaa.Name = "tbEmailCinemaa";
-            this.tbEmailCinemaa.Size = new System.Drawing.Size(215, 22);
-            this.tbEmailCinemaa.TabIndex = 6;
+            this.tbNomeCinema.Location = new System.Drawing.Point(22, 52);
+            this.tbNomeCinema.Name = "tbNomeCinema";
+            this.tbNomeCinema.Size = new System.Drawing.Size(215, 22);
+            this.tbNomeCinema.TabIndex = 2;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 162);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Email";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nome";
             // 
             // gbAdicionarSala
             // 
+            this.gbAdicionarSala.Controls.Add(this.btnAddSala);
             this.gbAdicionarSala.Controls.Add(this.tbLinhasSala);
             this.gbAdicionarSala.Controls.Add(this.label4);
             this.gbAdicionarSala.Controls.Add(this.tbColunasSala);
@@ -119,10 +137,20 @@
             this.gbAdicionarSala.Controls.Add(this.label6);
             this.gbAdicionarSala.Location = new System.Drawing.Point(314, 24);
             this.gbAdicionarSala.Name = "gbAdicionarSala";
-            this.gbAdicionarSala.Size = new System.Drawing.Size(278, 229);
+            this.gbAdicionarSala.Size = new System.Drawing.Size(278, 243);
             this.gbAdicionarSala.TabIndex = 1;
             this.gbAdicionarSala.TabStop = false;
             this.gbAdicionarSala.Text = "Adicionar Sala";
+            // 
+            // btnAddSala
+            // 
+            this.btnAddSala.Location = new System.Drawing.Point(169, 214);
+            this.btnAddSala.Name = "btnAddSala";
+            this.btnAddSala.Size = new System.Drawing.Size(86, 23);
+            this.btnAddSala.TabIndex = 8;
+            this.btnAddSala.Text = "Adicionar";
+            this.btnAddSala.UseVisualStyleBackColor = true;
+            this.btnAddSala.Click += new System.EventHandler(this.btnAddSala_Click);
             // 
             // tbLinhasSala
             // 
@@ -172,11 +200,55 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Nome";
             // 
+            // lbNome
+            // 
+            this.lbNome.FormattingEnabled = true;
+            this.lbNome.ItemHeight = 16;
+            this.lbNome.Location = new System.Drawing.Point(636, 24);
+            this.lbNome.Name = "lbNome";
+            this.lbNome.Size = new System.Drawing.Size(120, 212);
+            this.lbNome.TabIndex = 13;
+            this.lbNome.SelectedIndexChanged += new System.EventHandler(this.lbNome_SelectedIndexChanged);
+            // 
+            // lbColuna
+            // 
+            this.lbColuna.FormattingEnabled = true;
+            this.lbColuna.ItemHeight = 16;
+            this.lbColuna.Location = new System.Drawing.Point(636, 24);
+            this.lbColuna.Name = "lbColuna";
+            this.lbColuna.Size = new System.Drawing.Size(120, 212);
+            this.lbColuna.TabIndex = 14;
+            this.lbColuna.Visible = false;
+            // 
+            // lbLinha
+            // 
+            this.lbLinha.FormattingEnabled = true;
+            this.lbLinha.ItemHeight = 16;
+            this.lbLinha.Location = new System.Drawing.Point(636, 24);
+            this.lbLinha.Name = "lbLinha";
+            this.lbLinha.Size = new System.Drawing.Size(120, 212);
+            this.lbLinha.TabIndex = 15;
+            this.lbLinha.Visible = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(636, 238);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(120, 23);
+            this.btnDelete.TabIndex = 16;
+            this.btnDelete.Text = "Apagar";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // CinemaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(772, 333);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.lbNome);
+            this.Controls.Add(this.lbColuna);
+            this.Controls.Add(this.lbLinha);
             this.Controls.Add(this.gbAdicionarSala);
             this.Controls.Add(this.gbDadosCinema);
             this.Name = "CinemaForm";
@@ -192,7 +264,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbDadosCinema;
-        private System.Windows.Forms.TextBox tbEmailCinemaa;
+        private System.Windows.Forms.TextBox tbEmailCinema;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbMoradalCinema;
         private System.Windows.Forms.Label label2;
@@ -205,5 +277,11 @@
         private System.Windows.Forms.Label lbl5;
         private System.Windows.Forms.TextBox tbNomeSala;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnUpdateCinema;
+        private System.Windows.Forms.Button btnAddSala;
+        private System.Windows.Forms.ListBox lbNome;
+        private System.Windows.Forms.ListBox lbColuna;
+        private System.Windows.Forms.ListBox lbLinha;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

@@ -21,14 +21,6 @@ namespace CineGuest
 
         private void AtendimentoForm_Load(object sender, EventArgs e)
         {
-            /*          Label label = new Label();
-                      label.Text = "Hello, world!"; Label label1 = new Label();
-                      label1.Text = "Hello, world!";
-
-
-
-                      tabSala.Controls.Add(label1, 0, 0);
-            */
 
             tabSala.SuspendLayout();
             tabSala.Controls.Clear();
@@ -38,6 +30,8 @@ namespace CineGuest
             tabSala.RowCount = trinta;
             int coluna = dez;
             int linha = trinta;
+
+
             
 
             for (int i=0; i < linha; i++)
@@ -46,22 +40,41 @@ namespace CineGuest
                 {
                     Button butao = new Button();
                     butao.Size = new Size(40, 25);
-                    butao.Text = (char)(i + 65) + "|" + (j + 1);
+                    butao.Text = (char)(i + 65) + " | " + (j + 1);
                     tabSala.Controls.Add(butao, j, i);
+
+                    butao.Click += Butao_Click;
                 }
             }
 
             tabSala.ResumeLayout();
             tabSala.AutoScroll = true;
         }
-        
-        private void butao_Click(object sender, ScrollEventArgs e)
+
+        private void Butao_Click(object sender, EventArgs e)
         {
-            BackColor = Color.Red;
+            if (((Button)sender).BackColor == Color.Red)
+            {
+                MessageBox.Show("Ligar já ocupado");
+            }
+            else
+            {
+                ((Button)sender).BackColor = Color.Red;
+                string but = ((Button)sender).Text;
+
+                lbBancos.Items.Add(but);
+            }
         }
 
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        private void btnMainMenu_Click(object sender, EventArgs e)
         {
+            
+            Close();
+        }
+
+        private void btnFinCompra_Click(object sender, EventArgs e)
+        {
+            //codigo para adicionar à base de dados os bancos ocupados
         }
     }
 }
