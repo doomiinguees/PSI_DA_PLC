@@ -35,11 +35,14 @@
             this.lbl5 = new System.Windows.Forms.Label();
             this.tbNomeFilme = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnAddMovie = new System.Windows.Forms.Button();
+            this.lbNomeFilme = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAddMovie);
             this.groupBox1.Controls.Add(this.cbStatus);
             this.groupBox1.Controls.Add(this.cbCategoria);
             this.groupBox1.Controls.Add(this.label4);
@@ -48,10 +51,9 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(307, 229);
+            this.groupBox1.Size = new System.Drawing.Size(258, 254);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // cbStatus
             // 
@@ -103,11 +105,32 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Nome";
             // 
+            // btnAddMovie
+            // 
+            this.btnAddMovie.Location = new System.Drawing.Point(143, 224);
+            this.btnAddMovie.Name = "btnAddMovie";
+            this.btnAddMovie.Size = new System.Drawing.Size(106, 23);
+            this.btnAddMovie.TabIndex = 21;
+            this.btnAddMovie.Text = "Adicionar filme";
+            this.btnAddMovie.UseVisualStyleBackColor = true;
+            this.btnAddMovie.Click += new System.EventHandler(this.btnAddMovie_Click);
+            // 
+            // lbNomeFilme
+            // 
+            this.lbNomeFilme.FormattingEnabled = true;
+            this.lbNomeFilme.ItemHeight = 16;
+            this.lbNomeFilme.Location = new System.Drawing.Point(286, 20);
+            this.lbNomeFilme.Name = "lbNomeFilme";
+            this.lbNomeFilme.Size = new System.Drawing.Size(502, 244);
+            this.lbNomeFilme.TabIndex = 1;
+            this.lbNomeFilme.SelectedIndexChanged += new System.EventHandler(this.lbNomeFilme_SelectedIndexChanged);
+            // 
             // FilmeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbNomeFilme);
             this.Controls.Add(this.groupBox1);
             this.Name = "FilmeForm";
             this.Text = "FilmeForm";
@@ -126,5 +149,7 @@
         private System.Windows.Forms.Label lbl5;
         private System.Windows.Forms.TextBox tbNomeFilme;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnAddMovie;
+        private System.Windows.Forms.ListBox lbNomeFilme;
     }
 }

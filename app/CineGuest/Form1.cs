@@ -52,9 +52,11 @@ namespace CineGuest
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void filmesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            FilmeForm filmeForm = new FilmeForm();
+            filmeForm.ShowDialog();
         }
+
     }
 }

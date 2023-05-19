@@ -36,6 +36,7 @@
             this.btnFinCompra = new System.Windows.Forms.Button();
             this.lbBancos = new System.Windows.Forms.ListBox();
             this.cbCliente = new System.Windows.Forms.ComboBox();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.gbSessao.SuspendLayout();
             this.gbSala.SuspendLayout();
             this.SuspendLayout();
@@ -93,7 +94,7 @@
             // 
             // btnFinCompra
             // 
-            this.btnFinCompra.Location = new System.Drawing.Point(29, 379);
+            this.btnFinCompra.Location = new System.Drawing.Point(29, 390);
             this.btnFinCompra.Name = "btnFinCompra";
             this.btnFinCompra.Size = new System.Drawing.Size(200, 23);
             this.btnFinCompra.TabIndex = 3;
@@ -118,11 +119,21 @@
             this.cbCliente.Size = new System.Drawing.Size(200, 24);
             this.cbCliente.TabIndex = 5;
             // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(181, 371);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(25, 16);
+            this.lblPrice.TabIndex = 6;
+            this.lblPrice.Text = "-- €";
+            // 
             // AtendimentoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 694);
+            this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.cbCliente);
             this.Controls.Add(this.lbBancos);
             this.Controls.Add(this.btnFinCompra);
@@ -136,6 +147,7 @@
             this.gbSessao.PerformLayout();
             this.gbSala.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -149,5 +161,6 @@
         private System.Windows.Forms.Button btnFinCompra;
         private System.Windows.Forms.ListBox lbBancos;
         private System.Windows.Forms.ComboBox cbCliente;
+        private System.Windows.Forms.Label lblPrice;
     }
 }
