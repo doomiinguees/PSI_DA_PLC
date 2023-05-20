@@ -46,7 +46,6 @@ namespace CineGuest
 
             string film = lbNomeFilme.Items[selected].ToString();
 
-            label6.Text = film;
         }
     }
 }
