@@ -1,6 +1,6 @@
 ﻿namespace CineGuest
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,6 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cbUser = new System.Windows.Forms.ComboBox();
-            this.lbltest = new System.Windows.Forms.Label();
             this.msMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,14 +76,16 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
             this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // funcionáriosToolStripMenuItem
             // 
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
             this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
+            this.funcionáriosToolStripMenuItem.Click += new System.EventHandler(this.funcionáriosToolStripMenuItem_Click);
             // 
             // cbUser
             // 
@@ -94,26 +95,17 @@
             this.cbUser.Size = new System.Drawing.Size(186, 24);
             this.cbUser.TabIndex = 1;
             this.cbUser.Text = "<Selecionar Funcionário>";
+            this.cbUser.SelectedIndexChanged += new System.EventHandler(this.cbUser_SelectedIndexChanged);
             // 
-            // lbltest
-            // 
-            this.lbltest.AutoSize = true;
-            this.lbltest.Location = new System.Drawing.Point(203, 374);
-            this.lbltest.Name = "lbltest";
-            this.lbltest.Size = new System.Drawing.Size(44, 16);
-            this.lbltest.TabIndex = 2;
-            this.lbltest.Text = "label1";
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lbltest);
             this.Controls.Add(this.cbUser);
             this.Controls.Add(this.msMain);
             this.MainMenuStrip = this.msMain;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CineGuest";
             this.msMain.ResumeLayout(false);
@@ -132,7 +124,6 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem funcionáriosToolStripMenuItem;
         private System.Windows.Forms.ComboBox cbUser;
-        private System.Windows.Forms.Label lbltest;
     }
 }
 

@@ -15,6 +15,14 @@ namespace CineGuest
         public SessaoForm()
         {
             InitializeComponent();
+
+        }
+
+        private void btnAddSessao_Click(object sender, EventArgs e)
+        {
+            string sala = cbSala.Text.ToString();
+            string filme = cbFilme.Text.ToString();
+            
         }
     }
 }

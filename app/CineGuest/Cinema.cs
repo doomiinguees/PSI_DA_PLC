@@ -8,8 +8,7 @@ namespace CineGuest
 {
     internal class Cinema
     {
-        [KEY]
-        public int id { set; }
+        public int id { get;  set; }
         public string nome { get; set; }
         public string morada { get; set; }
         public string email { get; set; }

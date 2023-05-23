@@ -44,9 +44,7 @@
             this.lbl5 = new System.Windows.Forms.Label();
             this.tbNomeSala = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.lbNome = new System.Windows.Forms.ListBox();
-            this.lbColuna = new System.Windows.Forms.ListBox();
-            this.lbLinha = new System.Windows.Forms.ListBox();
+            this.lbSala = new System.Windows.Forms.ListBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.gbDadosCinema.SuspendLayout();
             this.gbAdicionarSala.SuspendLayout();
@@ -200,35 +198,15 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Nome";
             // 
-            // lbNome
+            // lbSala
             // 
-            this.lbNome.FormattingEnabled = true;
-            this.lbNome.ItemHeight = 16;
-            this.lbNome.Location = new System.Drawing.Point(636, 24);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(120, 212);
-            this.lbNome.TabIndex = 13;
-            this.lbNome.SelectedIndexChanged += new System.EventHandler(this.lbNome_SelectedIndexChanged);
-            // 
-            // lbColuna
-            // 
-            this.lbColuna.FormattingEnabled = true;
-            this.lbColuna.ItemHeight = 16;
-            this.lbColuna.Location = new System.Drawing.Point(636, 24);
-            this.lbColuna.Name = "lbColuna";
-            this.lbColuna.Size = new System.Drawing.Size(120, 212);
-            this.lbColuna.TabIndex = 14;
-            this.lbColuna.Visible = false;
-            // 
-            // lbLinha
-            // 
-            this.lbLinha.FormattingEnabled = true;
-            this.lbLinha.ItemHeight = 16;
-            this.lbLinha.Location = new System.Drawing.Point(636, 24);
-            this.lbLinha.Name = "lbLinha";
-            this.lbLinha.Size = new System.Drawing.Size(120, 212);
-            this.lbLinha.TabIndex = 15;
-            this.lbLinha.Visible = false;
+            this.lbSala.FormattingEnabled = true;
+            this.lbSala.ItemHeight = 16;
+            this.lbSala.Location = new System.Drawing.Point(636, 24);
+            this.lbSala.Name = "lbSala";
+            this.lbSala.Size = new System.Drawing.Size(120, 212);
+            this.lbSala.TabIndex = 13;
+            this.lbSala.SelectedIndexChanged += new System.EventHandler(this.lbNome_SelectedIndexChanged);
             // 
             // btnDelete
             // 
@@ -246,9 +224,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 333);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.lbNome);
-            this.Controls.Add(this.lbColuna);
-            this.Controls.Add(this.lbLinha);
+            this.Controls.Add(this.lbSala);
             this.Controls.Add(this.gbAdicionarSala);
             this.Controls.Add(this.gbDadosCinema);
             this.Name = "CinemaForm";
@@ -279,9 +255,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnUpdateCinema;
         private System.Windows.Forms.Button btnAddSala;
-        private System.Windows.Forms.ListBox lbNome;
-        private System.Windows.Forms.ListBox lbColuna;
-        private System.Windows.Forms.ListBox lbLinha;
+        private System.Windows.Forms.ListBox lbSala;
         private System.Windows.Forms.Button btnDelete;
     }
 }

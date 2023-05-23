@@ -11,9 +11,9 @@ using static System.Windows.Forms.LinkLabel;
 
 namespace CineGuest
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             cbUser.Items.Add("qsabjsjfl");
@@ -58,5 +58,21 @@ namespace CineGuest
             filmeForm.ShowDialog();
         }
 
+        private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FunconarioForm funconarioForm = new FunconarioForm();
+            funconarioForm.ShowDialog();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClienteForm clienteForm = new ClienteForm();
+            clienteForm.ShowDialog();
+        }
+
+        private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

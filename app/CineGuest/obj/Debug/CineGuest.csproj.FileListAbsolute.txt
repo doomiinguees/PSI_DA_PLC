@@ -20,9 +20,12 @@ C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\Cin
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.AtendimentoForm.resources
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.CinemaForm.resources
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.FilmeForm.resources
-C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.Form1.resources
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.Properties.Resources.resources
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.csproj.GenerateResource.cache
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.csproj.CoreCompileInputs.cache
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.exe
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.pdb
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.FunconarioForm.resources
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.MainForm.resources
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.ClienteForm.resources
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.SessaoForm.resources

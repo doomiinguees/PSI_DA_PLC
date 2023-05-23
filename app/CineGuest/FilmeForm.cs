@@ -33,7 +33,7 @@ namespace CineGuest
 
             string concat = $"{nome} | {categoria} | {estado}";
 
-            lbNomeFilme.Items.Add(concat);
+            lbFilme.Items.Add(concat);
 
             tbNomeFilme.Clear();
             cbCategoria.SelectedIndex = -1;
@@ -42,9 +42,9 @@ namespace CineGuest
 
         private void lbNomeFilme_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int selected = lbNomeFilme.SelectedIndex;
+            int selected = lbFilme.SelectedIndex;
 
-            string film = lbNomeFilme.Items[selected].ToString();
+            string film = lbFilme.Items[selected].ToString();
 
         }
     }
