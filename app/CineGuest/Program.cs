@@ -16,7 +16,7 @@ namespace CineGuest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SessaoForm());
+            Application.Run(new CinemaForm());
         }
     }
 }

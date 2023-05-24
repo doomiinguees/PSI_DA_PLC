@@ -29,3 +29,8 @@ C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\Cin
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.MainForm.resources
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.ClienteForm.resources
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.SessaoForm.resources
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\bin\Debug\EntityFramework.dll
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\bin\Debug\EntityFramework.xml
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.csproj.CopyComplete

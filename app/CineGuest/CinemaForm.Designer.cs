@@ -46,8 +46,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lbSala = new System.Windows.Forms.ListBox();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gbDadosCinema.SuspendLayout();
             this.gbAdicionarSala.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDadosCinema
@@ -59,18 +61,18 @@
             this.gbDadosCinema.Controls.Add(this.label2);
             this.gbDadosCinema.Controls.Add(this.tbNomeCinema);
             this.gbDadosCinema.Controls.Add(this.label1);
-            this.gbDadosCinema.Location = new System.Drawing.Point(32, 24);
+            this.gbDadosCinema.Location = new System.Drawing.Point(12, 144);
             this.gbDadosCinema.Name = "gbDadosCinema";
-            this.gbDadosCinema.Size = new System.Drawing.Size(262, 243);
+            this.gbDadosCinema.Size = new System.Drawing.Size(271, 245);
             this.gbDadosCinema.TabIndex = 0;
             this.gbDadosCinema.TabStop = false;
             this.gbDadosCinema.Text = "Dados do cinema";
             // 
             // btnUpdateCinema
             // 
-            this.btnUpdateCinema.Location = new System.Drawing.Point(161, 214);
+            this.btnUpdateCinema.Location = new System.Drawing.Point(106, 214);
             this.btnUpdateCinema.Name = "btnUpdateCinema";
-            this.btnUpdateCinema.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateCinema.Size = new System.Drawing.Size(130, 23);
             this.btnUpdateCinema.TabIndex = 7;
             this.btnUpdateCinema.Text = "Atualizar";
             this.btnUpdateCinema.UseVisualStyleBackColor = true;
@@ -133,9 +135,9 @@
             this.gbAdicionarSala.Controls.Add(this.lbl5);
             this.gbAdicionarSala.Controls.Add(this.tbNomeSala);
             this.gbAdicionarSala.Controls.Add(this.label6);
-            this.gbAdicionarSala.Location = new System.Drawing.Point(314, 24);
+            this.gbAdicionarSala.Location = new System.Drawing.Point(294, 144);
             this.gbAdicionarSala.Name = "gbAdicionarSala";
-            this.gbAdicionarSala.Size = new System.Drawing.Size(278, 243);
+            this.gbAdicionarSala.Size = new System.Drawing.Size(287, 245);
             this.gbAdicionarSala.TabIndex = 1;
             this.gbAdicionarSala.TabStop = false;
             this.gbAdicionarSala.Text = "Adicionar Sala";
@@ -202,37 +204,48 @@
             // 
             this.lbSala.FormattingEnabled = true;
             this.lbSala.ItemHeight = 16;
-            this.lbSala.Location = new System.Drawing.Point(636, 24);
+            this.lbSala.Location = new System.Drawing.Point(6, 21);
             this.lbSala.Name = "lbSala";
-            this.lbSala.Size = new System.Drawing.Size(120, 212);
+            this.lbSala.Size = new System.Drawing.Size(302, 180);
             this.lbSala.TabIndex = 13;
             this.lbSala.SelectedIndexChanged += new System.EventHandler(this.lbNome_SelectedIndexChanged);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(636, 238);
+            this.btnDelete.Location = new System.Drawing.Point(766, 358);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(120, 23);
+            this.btnDelete.Size = new System.Drawing.Size(129, 25);
             this.btnDelete.TabIndex = 16;
             this.btnDelete.Text = "Apagar";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbSala);
+            this.groupBox1.Location = new System.Drawing.Point(587, 144);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(320, 245);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Salas";
+            // 
             // CinemaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 333);
+            this.ClientSize = new System.Drawing.Size(940, 521);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.lbSala);
             this.Controls.Add(this.gbAdicionarSala);
             this.Controls.Add(this.gbDadosCinema);
+            this.Controls.Add(this.groupBox1);
             this.Name = "CinemaForm";
             this.Text = "CinemaForm";
             this.gbDadosCinema.ResumeLayout(false);
             this.gbDadosCinema.PerformLayout();
             this.gbAdicionarSala.ResumeLayout(false);
             this.gbAdicionarSala.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -257,5 +270,6 @@
         private System.Windows.Forms.Button btnAddSala;
         private System.Windows.Forms.ListBox lbSala;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
