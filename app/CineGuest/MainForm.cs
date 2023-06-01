@@ -13,6 +13,7 @@ namespace CineGuest
 {
     public partial class MainForm : Form
     {
+        private ApplicationContext appContext = new ApplicationContext();
         public MainForm()
         {
             InitializeComponent();
@@ -73,6 +74,16 @@ namespace CineGuest
         private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (appContext.Cinemas.Count() == 0)
+            {
+                CinemaForm coneForm = new CinemaForm();
+                coneForm.ShowDialog();
+                
+            }
         }
     }
 }

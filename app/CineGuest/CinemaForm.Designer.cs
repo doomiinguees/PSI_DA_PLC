@@ -212,7 +212,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(766, 358);
+            this.btnDelete.Location = new System.Drawing.Point(179, 214);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(129, 25);
             this.btnDelete.TabIndex = 16;
@@ -223,6 +223,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lbSala);
+            this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Location = new System.Drawing.Point(587, 144);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(320, 245);
@@ -235,7 +236,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(940, 521);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.gbAdicionarSala);
             this.Controls.Add(this.gbDadosCinema);
             this.Controls.Add(this.groupBox1);

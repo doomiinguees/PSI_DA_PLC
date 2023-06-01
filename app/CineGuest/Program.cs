@@ -14,9 +14,13 @@ namespace CineGuest
         [STAThread]
         static void Main()
         {
+            ApplicationContext appContext = new ApplicationContext();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CinemaForm());
+            Application.Run(new SessaoForm());
+
+            
+            
         }
     }
 }

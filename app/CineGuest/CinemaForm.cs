@@ -6,6 +6,7 @@ using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,7 +20,7 @@ namespace CineGuest
         {
             InitializeComponent();
 
-            bool exist_cinema = applicationContext.cinema.Count() > 0;
+            bool exist_cinema = applicationContext.Cinemas.Count() > 0;
 
             if (!exist_cinema)
             {
@@ -29,7 +30,7 @@ namespace CineGuest
             }
             else
             {
-                Cinema cinema = applicationContext.cinema.ToList().First();
+                Cinema cinema = applicationContext.Cinemas.ToList().First();
 
                 tbNomeCinema.Text = cinema.nome;
                 tbMoradalCinema.Text = cinema.morada;
@@ -40,56 +41,68 @@ namespace CineGuest
             lbSala.SelectedIndex = -1;
             updateListBox();
             ClearLabels();
-
-
-
         }
 
         private void btnUpdateCinema_Click(object sender, EventArgs e)
         {
+            string vefifyemail = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
             string nome = tbNomeCinema.Text;
             string morada = tbMoradalCinema.Text;
             string email = tbEmailCinema.Text;
 
-            if(nome == string.Empty || morada == string.Empty || email == string.Empty)
+            if(nome == string.Empty)
             {
-                MessageBox.Show("Existe um campo vazio");
+                MessageBox.Show("Nome inválida");
                 return;
+            }
+
+            if (email == string.Empty || !Regex.IsMatch(email, vefifyemail))
+            {
+                MessageBox.Show("Email inválido");
+                return;
+            }
+
+            if (morada == string.Empty)
+            {
+                MessageBox.Show("Morada inválido");
+                return;
+            }
+            
+            bool exist_cinema = applicationContext.Cinemas.Count() > 0;
+
+            if (!exist_cinema)
+            {
+                Cinema cinema = new Cinema(); 
+
+                cinema.nome = nome;
+                cinema.morada = morada;
+                cinema.email = email;
+
+                btnUpdateCinema.Text = "Criar Cinema";
+                applicationContext.Cinemas.Add(cinema);
+
             }
             else
             {
-                bool exist_cinema = applicationContext.cinema.Count() > 0;
+                Cinema cine = applicationContext.Cinemas.ToList().First();
 
-                if (!exist_cinema)
-                {
-                    Cinema cinema = new Cinema(); 
-
-                    cinema.nome = nome;
-                    cinema.morada = morada;
-                    cinema.email = email;
-
-                    btnUpdateCinema.Text = "Criar Cinema";
-                    applicationContext.cinema.Add(cinema);
-
-                }
-                else
-                {
-                    Cinema cine = applicationContext.cinema.ToList().First();
-
-                    cine.nome = nome;
-                    cine.morada = morada;
-                    cine.email = email;
-                    applicationContext.cinema.AddOrUpdate(cine);
-                }   
-                
-
-
-                applicationContext.SaveChanges();
-                btnUpdateCinema.Text = "Atualizar";
-                
+                cine.nome = nome;
+                cine.morada = morada;
+                cine.email = email;
+                applicationContext.Cinemas.AddOrUpdate(cine);
             }
 
+            applicationContext.SaveChanges();
+            btnUpdateCinema.Text = "Atualizar";
 
+
+        }
+        private void btnGoApp_Click(object sender, EventArgs e)
+        {
+            Close();
+            MainForm mainForm = new MainForm();
+
+            mainForm.ShowDialog();
         }
 
         private void btnAddSala_Click(object sender, EventArgs e)
@@ -111,7 +124,7 @@ namespace CineGuest
 
                 ApplicationContext applicationContext = new ApplicationContext();
 
-                applicationContext.sala.Add(sala);
+                applicationContext.Salas.Add(sala);
                 applicationContext.SaveChanges();
                 updateListBox();
                 ClearLabels();
@@ -133,7 +146,7 @@ namespace CineGuest
 
                 ApplicationContext applicationContext = new ApplicationContext();
 
-                applicationContext.sala.AddOrUpdate(sala);
+                applicationContext.Salas.AddOrUpdate(sala);
                 applicationContext.SaveChanges();
                 updateListBox();
                 ClearLabels();
@@ -171,8 +184,8 @@ namespace CineGuest
             }
             else
             {
-                Sala sala = applicationContext.sala.ToList()[select];
-                applicationContext.sala.Remove(sala);
+                Sala sala = applicationContext.Salas.ToList()[select];
+                applicationContext.Salas.Remove(sala);
                 applicationContext.SaveChanges();
 
                 updateListBox();
@@ -190,9 +203,17 @@ namespace CineGuest
         private void updateListBox()
         {
             lbSala.DataSource = null;
-            lbSala.DataSource = applicationContext.sala.ToList();
+            lbSala.DataSource = applicationContext.Salas.ToList();
         }
 
-        
+        private void CinemaForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (applicationContext.Cinemas.Count() == 0)
+            {
+                MessageBox.Show("Dados do cinema não inseridos");
+                return;
+            }
+        }
+
     }
 }

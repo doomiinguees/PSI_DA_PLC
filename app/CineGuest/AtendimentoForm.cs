@@ -76,5 +76,12 @@ namespace CineGuest
         {
             //codigo para adicionar à base de dados os bancos ocupados
         }
+
+        private void btnCreateClient_Click(object sender, EventArgs e)
+        {
+            ClienteForm cliente = new ClienteForm();
+
+            cliente.ShowDialog();
+        }
     }
 }

@@ -76,7 +76,7 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -90,7 +90,7 @@
             // cbUser
             // 
             this.cbUser.FormattingEnabled = true;
-            this.cbUser.Location = new System.Drawing.Point(614, 4);
+            this.cbUser.Location = new System.Drawing.Point(602, 4);
             this.cbUser.Name = "cbUser";
             this.cbUser.Size = new System.Drawing.Size(186, 24);
             this.cbUser.TabIndex = 1;
@@ -108,6 +108,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CineGuest";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.msMain.ResumeLayout(false);
             this.msMain.PerformLayout();
             this.ResumeLayout(false);

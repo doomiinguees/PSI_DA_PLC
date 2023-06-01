@@ -37,6 +37,7 @@
             this.lbBancos = new System.Windows.Forms.ListBox();
             this.cbCliente = new System.Windows.Forms.ComboBox();
             this.lblPrice = new System.Windows.Forms.Label();
+            this.btnCreateClient = new System.Windows.Forms.Button();
             this.gbSessao.SuspendLayout();
             this.gbSala.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +95,7 @@
             // 
             // btnFinCompra
             // 
-            this.btnFinCompra.Location = new System.Drawing.Point(29, 390);
+            this.btnFinCompra.Location = new System.Drawing.Point(29, 565);
             this.btnFinCompra.Name = "btnFinCompra";
             this.btnFinCompra.Size = new System.Drawing.Size(200, 23);
             this.btnFinCompra.TabIndex = 3;
@@ -106,7 +107,7 @@
             // 
             this.lbBancos.FormattingEnabled = true;
             this.lbBancos.ItemHeight = 16;
-            this.lbBancos.Location = new System.Drawing.Point(29, 264);
+            this.lbBancos.Location = new System.Drawing.Point(29, 439);
             this.lbBancos.Name = "lbBancos";
             this.lbBancos.Size = new System.Drawing.Size(200, 100);
             this.lbBancos.TabIndex = 4;
@@ -114,7 +115,7 @@
             // cbCliente
             // 
             this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(29, 220);
+            this.cbCliente.Location = new System.Drawing.Point(29, 361);
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(200, 24);
             this.cbCliente.TabIndex = 5;
@@ -122,17 +123,28 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(181, 371);
+            this.lblPrice.Location = new System.Drawing.Point(181, 546);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(25, 16);
             this.lblPrice.TabIndex = 6;
             this.lblPrice.Text = "-- €";
+            // 
+            // btnCreateClient
+            // 
+            this.btnCreateClient.Location = new System.Drawing.Point(124, 401);
+            this.btnCreateClient.Name = "btnCreateClient";
+            this.btnCreateClient.Size = new System.Drawing.Size(104, 23);
+            this.btnCreateClient.TabIndex = 7;
+            this.btnCreateClient.Text = "Criar Cliente";
+            this.btnCreateClient.UseVisualStyleBackColor = true;
+            this.btnCreateClient.Click += new System.EventHandler(this.btnCreateClient_Click);
             // 
             // AtendimentoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 694);
+            this.Controls.Add(this.btnCreateClient);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.cbCliente);
             this.Controls.Add(this.lbBancos);
@@ -162,5 +174,6 @@
         private System.Windows.Forms.ListBox lbBancos;
         private System.Windows.Forms.ComboBox cbCliente;
         private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Button btnCreateClient;
     }
 }

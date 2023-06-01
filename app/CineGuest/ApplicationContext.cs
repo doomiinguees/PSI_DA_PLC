@@ -9,7 +9,7 @@ namespace CineGuest
 {
     internal class ApplicationContext : DbContext
     {
-        public DbSet <Cinema> cinema { get; set; }
-        public DbSet <Sala> sala { get; set; }
+        public DbSet <Cinema> Cinemas { get; set; }
+        public DbSet <Sala> Salas { get; set; }
     }
 }
