@@ -17,7 +17,7 @@ namespace CineGuest
             ApplicationContext appContext = new ApplicationContext();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SessaoForm());
+            Application.Run(new MainForm());
 
             
             

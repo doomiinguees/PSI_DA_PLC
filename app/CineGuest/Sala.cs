@@ -27,5 +27,6 @@ namespace CineGuest
         {
             return $"{nome} - {colunas} X {linhas}";
         }
+
     }
 }

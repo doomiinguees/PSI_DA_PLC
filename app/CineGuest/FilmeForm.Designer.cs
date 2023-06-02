@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.duracaoFilme = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnAddMovie = new System.Windows.Forms.Button();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
@@ -42,6 +44,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.duracaoFilme);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnAddMovie);
             this.groupBox1.Controls.Add(this.cbStatus);
             this.groupBox1.Controls.Add(this.cbCategoria);
@@ -51,15 +55,34 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(22, 93);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(258, 254);
+            this.groupBox1.Size = new System.Drawing.Size(258, 308);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // duracaoFilme
+            // 
+            this.duracaoFilme.CustomFormat = "hh:mm:ss";
+            this.duracaoFilme.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.duracaoFilme.Location = new System.Drawing.Point(18, 173);
+            this.duracaoFilme.Name = "duracaoFilme";
+            this.duracaoFilme.ShowUpDown = true;
+            this.duracaoFilme.Size = new System.Drawing.Size(232, 22);
+            this.duracaoFilme.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 16);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Duração";
+            // 
             // btnAddMovie
             // 
-            this.btnAddMovie.Location = new System.Drawing.Point(143, 224);
+            this.btnAddMovie.Location = new System.Drawing.Point(103, 276);
             this.btnAddMovie.Name = "btnAddMovie";
-            this.btnAddMovie.Size = new System.Drawing.Size(106, 23);
+            this.btnAddMovie.Size = new System.Drawing.Size(145, 23);
             this.btnAddMovie.TabIndex = 21;
             this.btnAddMovie.Text = "Adicionar filme";
             this.btnAddMovie.UseVisualStyleBackColor = true;
@@ -68,7 +91,7 @@
             // cbStatus
             // 
             this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Location = new System.Drawing.Point(18, 178);
+            this.cbStatus.Location = new System.Drawing.Point(17, 230);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(232, 24);
             this.cbStatus.TabIndex = 20;
@@ -84,7 +107,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 159);
+            this.label4.Location = new System.Drawing.Point(17, 211);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 16);
             this.label4.TabIndex = 17;
@@ -134,6 +157,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FilmeForm";
             this.Text = "FilmeForm";
+            this.Load += new System.EventHandler(this.FilmeForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -151,5 +175,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAddMovie;
         private System.Windows.Forms.ListBox lbFilme;
+        private System.Windows.Forms.DateTimePicker duracaoFilme;
+        private System.Windows.Forms.Label label1;
     }
 }

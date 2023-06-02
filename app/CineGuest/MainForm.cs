@@ -44,10 +44,7 @@ namespace CineGuest
         private void cinemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
-            /*string user = cbUser.GetItemText(cbUser.SelectedIndex);
-            lbltest.Text = user;
-            string te1st = cbUser.SelectedItem.ToString();
-            lbltest.Text = te1st;*/
+            
             CinemaForm cinemaForm = new CinemaForm();
             cinemaForm.ShowDialog();
 
@@ -84,6 +81,12 @@ namespace CineGuest
                 coneForm.ShowDialog();
                 
             }
+        }
+
+        private void sesõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SessaoForm sessaoForm = new SessaoForm();
+            sessaoForm.ShowDialog();
         }
     }
 }

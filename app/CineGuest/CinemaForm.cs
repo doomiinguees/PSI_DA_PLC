@@ -97,13 +97,6 @@ namespace CineGuest
 
 
         }
-        private void btnGoApp_Click(object sender, EventArgs e)
-        {
-            Close();
-            MainForm mainForm = new MainForm();
-
-            mainForm.ShowDialog();
-        }
 
         private void btnAddSala_Click(object sender, EventArgs e)
         {
@@ -128,7 +121,7 @@ namespace CineGuest
                 applicationContext.SaveChanges();
                 updateListBox();
                 ClearLabels();
-
+                lbSala.SelectedIndex= -1;
 
             }
             else
@@ -150,6 +143,7 @@ namespace CineGuest
                 applicationContext.SaveChanges();
                 updateListBox();
                 ClearLabels();
+                lbSala.SelectedIndex = -1;
             }
 
         }

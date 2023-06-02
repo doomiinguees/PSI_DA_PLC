@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,15 +9,25 @@ namespace CineGuest
 {
     internal class Filme
     {
-        public string nome { get; set; }
-        public float duracao { get; set; }
-        public string estado { get; set; }
+        [Key]
+        public int id { get; set; }
+        public string Nome { get; set; }
+        public DateTime Duracao { get; set; }
+        public string Estado { get; set; }
+        public string Categoria { get; set; }
 
         public Filme()
         {
-            this.nome = null;
-            this.duracao = 0;
-            this.estado = null;
+            this.id = id + 1;
+            this.Nome = null;
+            this.Estado = "Desativado";
+            this.Categoria = null;
+
+        }
+
+        public override string ToString()
+        {
+            return $"{Nome} | {Categoria} | {Duracao} | {Estado}";
         }
     }
 }

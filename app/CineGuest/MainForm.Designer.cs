@@ -31,7 +31,7 @@
             this.msMain = new System.Windows.Forms.MenuStrip();
             this.cinemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filmesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sesõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sessõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cbUser = new System.Windows.Forms.ComboBox();
@@ -44,46 +44,47 @@
             this.msMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cinemaToolStripMenuItem,
             this.filmesToolStripMenuItem,
-            this.sesõesToolStripMenuItem,
+            this.sessõesToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.funcionáriosToolStripMenuItem});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
-            this.msMain.Size = new System.Drawing.Size(800, 28);
+            this.msMain.Size = new System.Drawing.Size(800, 30);
             this.msMain.TabIndex = 0;
             this.msMain.Text = "menuStrip1";
             // 
             // cinemaToolStripMenuItem
             // 
             this.cinemaToolStripMenuItem.Name = "cinemaToolStripMenuItem";
-            this.cinemaToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.cinemaToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
             this.cinemaToolStripMenuItem.Text = "Cinema";
             this.cinemaToolStripMenuItem.Click += new System.EventHandler(this.cinemaToolStripMenuItem_Click);
             // 
             // filmesToolStripMenuItem
             // 
             this.filmesToolStripMenuItem.Name = "filmesToolStripMenuItem";
-            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(65, 26);
             this.filmesToolStripMenuItem.Text = "Filmes";
             this.filmesToolStripMenuItem.Click += new System.EventHandler(this.filmesToolStripMenuItem_Click);
             // 
-            // sesõesToolStripMenuItem
+            // sessõesToolStripMenuItem
             // 
-            this.sesõesToolStripMenuItem.Name = "sesõesToolStripMenuItem";
-            this.sesõesToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
-            this.sesõesToolStripMenuItem.Text = "Sesões";
+            this.sessõesToolStripMenuItem.Name = "sessõesToolStripMenuItem";
+            this.sessõesToolStripMenuItem.Size = new System.Drawing.Size(74, 26);
+            this.sessõesToolStripMenuItem.Text = "Sessões";
+            this.sessõesToolStripMenuItem.Click += new System.EventHandler(this.sesõesToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // funcionáriosToolStripMenuItem
             // 
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
-            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
+            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(106, 26);
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
             this.funcionáriosToolStripMenuItem.Click += new System.EventHandler(this.funcionáriosToolStripMenuItem_Click);
             // 
@@ -121,7 +122,7 @@
         private System.Windows.Forms.MenuStrip msMain;
         private System.Windows.Forms.ToolStripMenuItem cinemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filmesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sesõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sessõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem funcionáriosToolStripMenuItem;
         private System.Windows.Forms.ComboBox cbUser;
