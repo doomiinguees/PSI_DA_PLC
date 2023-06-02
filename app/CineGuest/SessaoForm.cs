@@ -24,10 +24,10 @@ namespace CineGuest
             Sessao sessao = new Sessao();
             string sala = cbSala.Text.ToString();
             string filme = cbFilme.Text.ToString();
-            string precostr = tbPrecoSessao.Text;
-            DateTime hora = hrSessao.Value;
-            DateTime inicio = dtaInicioSessao.Value;
-            DateTime fim = dtaFimSessao.Value;
+            string precostr = tbPrecoSessao.Text /*+ ""*/;
+            DateTime hora = new DateTime(hrSessao.Value.Hour, hrSessao.Value.Minute, 0);
+            DateTime inicio = dtaInicioSessao.Value.Date;
+            DateTime fim = dtaFimSessao.Value.Date;
 
             if (confirmaString(sala, "Sala") == true || confirmaString(filme, "Filme") == true || confirmaString(precostr, "Preço") == true)
             {
@@ -44,7 +44,7 @@ namespace CineGuest
                     sessao.Filmes = filme;
                     sessao.Preco = preco;
                     sessao.Data = item;
-                    sessao.Hora = hora;
+                 /*   sessao.Hora = hora;*/
 
                     appContext.Sessoes.Add(sessao);
                     appContext.SaveChanges();

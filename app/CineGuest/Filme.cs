@@ -27,7 +27,7 @@ namespace CineGuest
 
         public override string ToString()
         {
-            return $"{Nome} | {Categoria} | {Duracao} | {Estado}";
+            return $"{Nome} | {Categoria} | {Duracao.ToString("hh:mm:ss")} | {Estado}";
         }
     }
 }

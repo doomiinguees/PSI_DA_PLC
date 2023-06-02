@@ -41,7 +41,7 @@ namespace CineGuest
                 string nome = tbNomeFilme.Text;
                 string categoria = cbCategoria.Text;
                 string estado = cbStatus.Text;
-                DateTime duracao = duracaoFilme.Value;
+                DateTime duracao = new DateTime(duracaoFilme.Value.Hour, duracaoFilme.Value.Minute, 0);
 
                 if (confirmaString(nome, "Nome") == true || confirmaString(categoria, "Categoria") == true || confirmaString(estado, "estado") == true)
                 {
@@ -64,7 +64,7 @@ namespace CineGuest
                 string nome = tbNomeFilme.Text;
                 string categoria = cbCategoria.Text;
                 string estado = cbStatus.Text;
-                DateTime duracao = duracaoFilme.Value;
+                DateTime duracao = new DateTime(duracaoFilme.Value.Hour, duracaoFilme.Value.Minute, 0); ;
 
                 if (confirmaString(nome, "Nome") == true || confirmaString(categoria, "Categoria") == true || confirmaString(estado, "estado") == true)
                 {
@@ -102,7 +102,7 @@ namespace CineGuest
                 Filme filme = lbFilme.SelectedItem as Filme;
                 tbNomeFilme.Text = filme.Nome;
                 cbCategoria.Text = filme.Categoria.ToString();
-        /*        duracaoFilme.Value = filme.Duracao;*/
+                duracaoFilme.Value = filme.Duracao;
                 cbStatus.Text = filme.Estado.ToString();
 
                 btnAddMovie.Text = "Atualizar filme";
