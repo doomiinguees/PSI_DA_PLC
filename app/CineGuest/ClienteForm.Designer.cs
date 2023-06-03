@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.cbCliente = new System.Windows.Forms.GroupBox();
+            this.btnAddCliente = new System.Windows.Forms.Button();
+            this.tbNIF = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tbCodPostal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tbMorada = new System.Windows.Forms.TextBox();
@@ -37,9 +40,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbNIF = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnAddCliente = new System.Windows.Forms.Button();
             this.lbCliente = new System.Windows.Forms.ListBox();
             this.cbCliente.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +62,32 @@
             this.cbCliente.Size = new System.Drawing.Size(286, 425);
             this.cbCliente.TabIndex = 0;
             this.cbCliente.TabStop = false;
+            // 
+            // btnAddCliente
+            // 
+            this.btnAddCliente.Location = new System.Drawing.Point(102, 364);
+            this.btnAddCliente.Name = "btnAddCliente";
+            this.btnAddCliente.Size = new System.Drawing.Size(152, 23);
+            this.btnAddCliente.TabIndex = 27;
+            this.btnAddCliente.Text = "Adicionar Cliente";
+            this.btnAddCliente.UseVisualStyleBackColor = true;
+            this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
+            // 
+            // tbNIF
+            // 
+            this.tbNIF.Location = new System.Drawing.Point(24, 113);
+            this.tbNIF.Name = "tbNIF";
+            this.tbNIF.Size = new System.Drawing.Size(230, 22);
+            this.tbNIF.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(192, 16);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Número de Identificação Fiscal";
             // 
             // tbCodPostal
             // 
@@ -123,54 +149,30 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(21, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 16);
+            this.label1.Size = new System.Drawing.Size(107, 16);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Nome do Funcionário";
-            // 
-            // tbNIF
-            // 
-            this.tbNIF.Location = new System.Drawing.Point(24, 113);
-            this.tbNIF.Name = "tbNIF";
-            this.tbNIF.Size = new System.Drawing.Size(230, 22);
-            this.tbNIF.TabIndex = 26;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 16);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Número de Identificação Fiscal";
-            // 
-            // btnAddCliente
-            // 
-            this.btnAddCliente.Location = new System.Drawing.Point(117, 364);
-            this.btnAddCliente.Name = "btnAddCliente";
-            this.btnAddCliente.Size = new System.Drawing.Size(137, 23);
-            this.btnAddCliente.TabIndex = 27;
-            this.btnAddCliente.Text = "Adicionar Cliente";
-            this.btnAddCliente.UseVisualStyleBackColor = true;
-            this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
+            this.label1.Text = "Nome do Cliente";
             // 
             // lbCliente
             // 
             this.lbCliente.FormattingEnabled = true;
             this.lbCliente.ItemHeight = 16;
-            this.lbCliente.Location = new System.Drawing.Point(305, 107);
+            this.lbCliente.Location = new System.Drawing.Point(333, 60);
             this.lbCliente.Name = "lbCliente";
-            this.lbCliente.Size = new System.Drawing.Size(472, 228);
+            this.lbCliente.Size = new System.Drawing.Size(545, 292);
             this.lbCliente.TabIndex = 1;
+            this.lbCliente.SelectedIndexChanged += new System.EventHandler(this.lbCliente_SelectedIndexChanged);
             // 
             // ClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1050, 494);
             this.Controls.Add(this.lbCliente);
             this.Controls.Add(this.cbCliente);
             this.Name = "ClienteForm";
             this.Text = "ClienteForm";
+            this.Load += new System.EventHandler(this.ClienteForm_Load);
             this.cbCliente.ResumeLayout(false);
             this.cbCliente.PerformLayout();
             this.ResumeLayout(false);

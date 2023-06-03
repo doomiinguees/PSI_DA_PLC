@@ -32,7 +32,6 @@
             this.gbSessao = new System.Windows.Forms.GroupBox();
             this.tabSala = new System.Windows.Forms.TableLayoutPanel();
             this.gbSala = new System.Windows.Forms.GroupBox();
-            this.btnMainMenu = new System.Windows.Forms.Button();
             this.btnFinCompra = new System.Windows.Forms.Button();
             this.lbBancos = new System.Windows.Forms.ListBox();
             this.cbCliente = new System.Windows.Forms.ComboBox();
@@ -82,16 +81,6 @@
             this.gbSala.TabIndex = 1;
             this.gbSala.TabStop = false;
             this.gbSala.Text = "Sala";
-            // 
-            // btnMainMenu
-            // 
-            this.btnMainMenu.Location = new System.Drawing.Point(29, 659);
-            this.btnMainMenu.Name = "btnMainMenu";
-            this.btnMainMenu.Size = new System.Drawing.Size(200, 23);
-            this.btnMainMenu.TabIndex = 2;
-            this.btnMainMenu.Text = "Voltar ao Menu Principal";
-            this.btnMainMenu.UseVisualStyleBackColor = true;
-            this.btnMainMenu.Click += new System.EventHandler(this.btnMainMenu_Click);
             // 
             // btnFinCompra
             // 
@@ -149,7 +138,6 @@
             this.Controls.Add(this.cbCliente);
             this.Controls.Add(this.lbBancos);
             this.Controls.Add(this.btnFinCompra);
-            this.Controls.Add(this.btnMainMenu);
             this.Controls.Add(this.gbSala);
             this.Controls.Add(this.gbSessao);
             this.Name = "AtendimentoForm";
@@ -169,7 +157,6 @@
         private System.Windows.Forms.GroupBox gbSessao;
         private System.Windows.Forms.TableLayoutPanel tabSala;
         private System.Windows.Forms.GroupBox gbSala;
-        private System.Windows.Forms.Button btnMainMenu;
         private System.Windows.Forms.Button btnFinCompra;
         private System.Windows.Forms.ListBox lbBancos;
         private System.Windows.Forms.ComboBox cbCliente;

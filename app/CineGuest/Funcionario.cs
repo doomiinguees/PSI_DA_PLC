@@ -8,13 +8,18 @@ namespace CineGuest
 {
     internal class Funcionario : Pessoa
     {
-        public float salario { get; set; }
-        public string funcao { get; set; }
+        public float Salario { get; set; }
+        public string Funcao { get; set; }
 
         public Funcionario()
         {
-            this.funcao = null;
-            this.salario = 0;
+            this.Funcao = null;
+            this.Salario = 0;
+        }
+
+        public override string ToString()
+        {
+            return $"{Nome} | {Funcao} | {Salario}€ | {Rua} - {Localidade} - {CodPostal}";
         }
     }
 }

@@ -17,11 +17,6 @@ namespace CineGuest
         public MainForm()
         {
             InitializeComponent();
-            cbUser.Items.Add("qsabjsjfl");
-            cbUser.Items.Add("qsabjsjfl");
-            cbUser.Items.Add("qsabjsjfl");
-            cbUser.Items.Add("qsabjsjfl");
-            cbUser.Items.Add("qsabjsjfl");
 
             /*
              * busca dados das sessoes e preenche a main
@@ -77,10 +72,16 @@ namespace CineGuest
         {
             if (appContext.Cinemas.Count() == 0)
             {
-                CinemaForm coneForm = new CinemaForm();
-                coneForm.ShowDialog();
-                
+                CinemaForm cineForm = new CinemaForm();
+                cineForm.ShowDialog();
             }
+            string nome = appContext.Cinemas.First().nome;
+            this.Text = $"{nome}";
+            /*
+             * pedir ajuda para colocar o nome dos funcionários na combobox
+            */
+
+
         }
 
         private void sesõesToolStripMenuItem_Click(object sender, EventArgs e)

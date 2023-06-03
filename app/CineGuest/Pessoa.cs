@@ -8,13 +8,16 @@ namespace CineGuest
 {
     internal class Pessoa
     {
-        public string nome { get; set; }
-        public string morada { get; set; }
+        public int Id{ get; set; } 
+        public string Nome { get; set; }
+        public string Rua { get; set; }
+        public string Localidade { get; set; }
+        public string CodPostal { get; set; }
 
         public Pessoa()
         {
-            this.nome = null;
-            this.morada = null;
+            this.Nome = null;
+            this.Rua = null;
         }
     }
 }

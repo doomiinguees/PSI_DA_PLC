@@ -13,6 +13,7 @@ namespace CineGuest
 {
     public partial class AtendimentoForm : Form
     {
+        ApplicationContext appContext = new ApplicationContext();
         public AtendimentoForm()
         {
             InitializeComponent();
@@ -22,6 +23,8 @@ namespace CineGuest
         private void AtendimentoForm_Load(object sender, EventArgs e)
         {
 
+            string nome = appContext.Cinemas.First().nome;
+            this.Text = $"{nome} | Venda de Bilhetes";
             tabSala.SuspendLayout();
             tabSala.Controls.Clear();
             int dez = 14;
@@ -64,12 +67,6 @@ namespace CineGuest
 
                 lbBancos.Items.Add(but);
             }
-        }
-
-        private void btnMainMenu_Click(object sender, EventArgs e)
-        {
-            
-            Close();
         }
 
         private void btnFinCompra_Click(object sender, EventArgs e)

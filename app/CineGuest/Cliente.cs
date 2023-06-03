@@ -19,7 +19,7 @@ namespace CineGuest
         public override string ToString()
         {
             
-            return $"{nome} - {NIF}";
+            return $"{Nome} | {NIF} |  {Rua} - {Localidade} - {CodPostal}";
         }
     }
 }

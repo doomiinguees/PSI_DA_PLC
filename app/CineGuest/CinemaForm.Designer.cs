@@ -241,6 +241,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "CinemaForm";
             this.Text = "CinemaForm";
+            this.Load += new System.EventHandler(this.CinemaForm_Load);
             this.gbDadosCinema.ResumeLayout(false);
             this.gbDadosCinema.PerformLayout();
             this.gbAdicionarSala.ResumeLayout(false);

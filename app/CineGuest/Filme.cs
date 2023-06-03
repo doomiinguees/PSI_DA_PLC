@@ -12,7 +12,7 @@ namespace CineGuest
         [Key]
         public int id { get; set; }
         public string Nome { get; set; }
-        public DateTime Duracao { get; set; }
+        public string Duracao { get; set; }
         public string Estado { get; set; }
         public string Categoria { get; set; }
 
@@ -27,7 +27,7 @@ namespace CineGuest
 
         public override string ToString()
         {
-            return $"{Nome} | {Categoria} | {Duracao.ToString("hh:mm:ss")} | {Estado}";
+            return $"{Nome} | {Categoria} | {Duracao} | {Estado}";
         }
     }
 }

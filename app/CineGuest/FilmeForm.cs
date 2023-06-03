@@ -17,6 +17,14 @@ namespace CineGuest
         public FilmeForm()
         {
             InitializeComponent();
+
+        }
+
+        private void FilmeForm_Load(object sender, EventArgs e)
+        {
+            string nome = appContext.Cinemas.First().nome;
+            this.Text = $"{nome} | Filmes";
+
             cbCategoria.Items.Add("Acção");
             cbCategoria.Items.Add("Thriller");
             cbCategoria.Items.Add("Comédia");
@@ -26,9 +34,8 @@ namespace CineGuest
             cbStatus.Items.Add("Ativo");
             cbStatus.Items.Add("Inativo");
 
-            lbFilme.SelectedIndex = -1;
-            updateList();
-            clearInputs();
+            UpdateList();
+            ClearInputs();
         }
 
         private void btnAddMovie_Click(object sender, EventArgs e)
@@ -41,9 +48,9 @@ namespace CineGuest
                 string nome = tbNomeFilme.Text;
                 string categoria = cbCategoria.Text;
                 string estado = cbStatus.Text;
-                DateTime duracao = new DateTime(duracaoFilme.Value.Hour, duracaoFilme.Value.Minute, 0);
+                string duracao = duracaoFilme.Value.ToString("HH:mm:ss");
 
-                if (confirmaString(nome, "Nome") == true || confirmaString(categoria, "Categoria") == true || confirmaString(estado, "estado") == true)
+                if (ConfirmaString(nome, "Nome") == true || ConfirmaString(categoria, "Categoria") == true || ConfirmaString(estado, "estado") == true)
                 {
                     return;
                 }
@@ -54,19 +61,20 @@ namespace CineGuest
                     filme.Estado = estado;
                     filme.Duracao = duracao;
 
-                    appContext.Filmes.AddOrUpdate(filme);
+                    appContext.Filmes.Add(filme);
                     appContext.SaveChanges();
                 }
             }
             else
             {
                 Filme filme = lbFilme.SelectedItem as Filme;
+
                 string nome = tbNomeFilme.Text;
                 string categoria = cbCategoria.Text;
                 string estado = cbStatus.Text;
-                DateTime duracao = new DateTime(duracaoFilme.Value.Hour, duracaoFilme.Value.Minute, 0); ;
+                string duracao = duracaoFilme.Value.ToString("HH:mm:ss");
 
-                if (confirmaString(nome, "Nome") == true || confirmaString(categoria, "Categoria") == true || confirmaString(estado, "estado") == true)
+                if (ConfirmaString(nome, "Nome") == true || ConfirmaString(categoria, "Categoria") == true || ConfirmaString(estado, "estado") == true)
                 {
                     return;
                 }
@@ -82,9 +90,9 @@ namespace CineGuest
                 }
 
             }
+            UpdateList();
+            ClearInputs();
 
-            updateList();
-            clearInputs();
         }
 
         private void lbNomeFilme_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,7 +102,7 @@ namespace CineGuest
             if (selected == -1)
             {
                 btnAddMovie.Text = "Adicionar Filme";
-                clearInputs();
+                ClearInputs();
                 return;
             }
             else
@@ -102,7 +110,7 @@ namespace CineGuest
                 Filme filme = lbFilme.SelectedItem as Filme;
                 tbNomeFilme.Text = filme.Nome;
                 cbCategoria.Text = filme.Categoria.ToString();
-                duracaoFilme.Value = filme.Duracao;
+                duracaoFilme.Value = DateTime.Parse(filme.Duracao);
                 cbStatus.Text = filme.Estado.ToString();
 
                 btnAddMovie.Text = "Atualizar filme";
@@ -111,7 +119,7 @@ namespace CineGuest
 
         }
 
-        public bool confirmaString(string verificar, string dado)
+        public bool ConfirmaString(string verificar, string dado)
         {
             if (verificar == string.Empty)
             {
@@ -124,38 +132,19 @@ namespace CineGuest
             }
         }
 
-        private bool confirmaDataHora(DateTime verificar, string dado)
-        {
-            if (verificar > DateTime.Now)
-            {
-                MessageBox.Show($"{dado} inválid@");
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        private void updateList()
+        private void UpdateList()
         {
             lbFilme.DataSource = null;
             lbFilme.DataSource = appContext.Filmes.ToList();
         }
 
-        private void clearInputs()
+        private void ClearInputs()
         {
-            lbFilme.SelectedIndex = -1;
             tbNomeFilme.Clear();
             cbCategoria.SelectedIndex = -1;
             cbStatus.SelectedIndex = 1;
-        }
-
-        private void FilmeForm_Load(object sender, EventArgs e)
-        {
             lbFilme.SelectedIndex = -1;
-            updateList();
-            clearInputs();
+            duracaoFilme.Value = DateTime.Parse(DateTime.Now.ToString("HH:mm:ss"));
         }
     }
 }

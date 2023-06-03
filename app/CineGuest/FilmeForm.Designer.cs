@@ -61,7 +61,7 @@
             // 
             // duracaoFilme
             // 
-            this.duracaoFilme.CustomFormat = "hh:mm:ss";
+            this.duracaoFilme.CustomFormat = "HH:mm:ss";
             this.duracaoFilme.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.duracaoFilme.Location = new System.Drawing.Point(18, 173);
             this.duracaoFilme.Name = "duracaoFilme";

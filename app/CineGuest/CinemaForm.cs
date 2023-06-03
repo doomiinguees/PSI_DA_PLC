@@ -9,18 +9,19 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CineGuest
 {
     public partial class CinemaForm : Form
     {
-        private ApplicationContext applicationContext = new ApplicationContext();
+        private ApplicationContext appContext = new ApplicationContext();
 
         public CinemaForm()
         {
             InitializeComponent();
 
-            bool exist_cinema = applicationContext.Cinemas.Count() > 0;
+            bool exist_cinema = appContext.Cinemas.Count() > 0;
 
             if (!exist_cinema)
             {
@@ -30,7 +31,7 @@ namespace CineGuest
             }
             else
             {
-                Cinema cinema = applicationContext.Cinemas.ToList().First();
+                Cinema cinema = appContext.Cinemas.ToList().First();
 
                 tbNomeCinema.Text = cinema.nome;
                 tbMoradalCinema.Text = cinema.morada;
@@ -43,32 +44,26 @@ namespace CineGuest
             ClearLabels();
         }
 
+        private void CinemaForm_Load(object sender, EventArgs e)
+        {
+            string nome = appContext.Cinemas.First().nome;
+            this.Text = $"{nome} | Cinema";
+            updateListBox();
+            ClearLabels();
+        }
+
         private void btnUpdateCinema_Click(object sender, EventArgs e)
         {
-            string vefifyemail = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
             string nome = tbNomeCinema.Text;
             string morada = tbMoradalCinema.Text;
             string email = tbEmailCinema.Text;
 
-            if(nome == string.Empty)
+            if(ConfirmaString(nome, "Nome") == true || ConfirmaEmail(email, "Email") == true || ConfirmaString(morada, "Morada"))
             {
-                MessageBox.Show("Nome inválida");
-                return;
-            }
-
-            if (email == string.Empty || !Regex.IsMatch(email, vefifyemail))
-            {
-                MessageBox.Show("Email inválido");
-                return;
-            }
-
-            if (morada == string.Empty)
-            {
-                MessageBox.Show("Morada inválido");
                 return;
             }
             
-            bool exist_cinema = applicationContext.Cinemas.Count() > 0;
+            bool exist_cinema = appContext.Cinemas.Count() > 0;
 
             if (!exist_cinema)
             {
@@ -79,20 +74,20 @@ namespace CineGuest
                 cinema.email = email;
 
                 btnUpdateCinema.Text = "Criar Cinema";
-                applicationContext.Cinemas.Add(cinema);
+                appContext.Cinemas.Add(cinema);
 
             }
             else
             {
-                Cinema cine = applicationContext.Cinemas.ToList().First();
+                Cinema cine = appContext.Cinemas.ToList().First();
 
                 cine.nome = nome;
                 cine.morada = morada;
                 cine.email = email;
-                applicationContext.Cinemas.AddOrUpdate(cine);
+                appContext.Cinemas.AddOrUpdate(cine);
             }
 
-            applicationContext.SaveChanges();
+            appContext.SaveChanges();
             btnUpdateCinema.Text = "Atualizar";
 
 
@@ -107,44 +102,58 @@ namespace CineGuest
             {
                 btnAddSala.Text = "Adicionar";
                 string nome = tbNomeSala.Text;
-                int colunas = int.Parse(tbColunasSala.Text);
-                int linhas = int.Parse(tbLinhasSala.Text);
-                
-                Sala sala = new Sala();
-                sala.nome = nome;
-                sala.colunas = colunas;
-                sala.linhas = linhas;
+                string colunas = tbColunasSala.Text;
+                string linhas = tbLinhasSala.Text;
 
-                ApplicationContext applicationContext = new ApplicationContext();
+                if (ConfirmaString(nome, "Sala") == true || ConfirmaInt(colunas, "Número de colunas") == true || ConfirmaInt(linhas, "Número de linhas"))
+                {
+                    return;
+                }
+                else
+                {
+                    int col = int.Parse(colunas);
+                    int lin = int.Parse(linhas);
 
-                applicationContext.Salas.Add(sala);
-                applicationContext.SaveChanges();
-                updateListBox();
-                ClearLabels();
-                lbSala.SelectedIndex= -1;
+                    Sala sala = new Sala();
+                    sala.nome = nome;
+                    sala.colunas = col;
+                    sala.linhas = lin;
 
+                    appContext.Salas.Add(sala);
+                    appContext.SaveChanges();
+                }
             }
             else
             {
                 string nome = tbNomeSala.Text;
-                int colunas = int.Parse(tbColunasSala.Text);
-                int linhas = int.Parse(tbLinhasSala.Text);
-                
-                Sala sala = lbSala.SelectedItem as Sala;
+                string colunas = tbColunasSala.Text;
+                string linhas = tbLinhasSala.Text;
 
-                sala.nome = nome;
-                sala.colunas = colunas;
-                sala.linhas = linhas;
+                if (ConfirmaString(nome, "Sala") == true || ConfirmaInt(colunas, "Número de colunas") == true || ConfirmaInt(linhas, "Número de linhas"))
+                {
+                    return;
+                }
+                else
+                {
+                    int col = int.Parse(colunas);
+                    int lin = int.Parse(linhas);
 
+                    Sala sala = lbSala.SelectedItem as Sala;
+                    sala.nome = nome;
+                    sala.colunas = col;
+                    sala.linhas = lin;
 
-                ApplicationContext applicationContext = new ApplicationContext();
-
-                applicationContext.Salas.AddOrUpdate(sala);
-                applicationContext.SaveChanges();
+                    appContext.Salas.AddOrUpdate(sala);
+                    appContext.SaveChanges();
+                }
                 updateListBox();
                 ClearLabels();
                 lbSala.SelectedIndex = -1;
             }
+
+            updateListBox();
+            ClearLabels();
+            lbSala.SelectedIndex = -1;
 
         }
             
@@ -178,9 +187,9 @@ namespace CineGuest
             }
             else
             {
-                Sala sala = applicationContext.Salas.ToList()[select];
-                applicationContext.Salas.Remove(sala);
-                applicationContext.SaveChanges();
+                Sala sala = appContext.Salas.ToList()[select];
+                appContext.Salas.Remove(sala);
+                appContext.SaveChanges();
 
                 updateListBox();
                 ClearLabels();
@@ -189,6 +198,7 @@ namespace CineGuest
 
         private void ClearLabels()
         {
+            lbSala.SelectedIndex= -1;
             tbNomeSala.Clear();
             tbColunasSala.Clear();
             tbLinhasSala.Clear();
@@ -197,17 +207,63 @@ namespace CineGuest
         private void updateListBox()
         {
             lbSala.DataSource = null;
-            lbSala.DataSource = applicationContext.Salas.ToList();
+            lbSala.DataSource = appContext.Salas.ToList();
+        }
+
+        public bool ConfirmaString(string verificar, string dado)
+        {
+            if (verificar == string.Empty)
+            {
+                MessageBox.Show($"{dado} inválid@");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ConfirmaInt(string verificar, string dado)
+        {
+            int data;
+
+            if (!int.TryParse(verificar, out data))
+            {
+                if (data < 0)
+                {
+                    MessageBox.Show($"{dado} inválid@");
+
+                }
+                MessageBox.Show($"{dado} inválid@");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ConfirmaEmail(string verificar, string dado)
+        {
+            string vefifyemail = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
+            if (verificar == string.Empty || !Regex.IsMatch(verificar, vefifyemail))
+            {
+                MessageBox.Show($"{dado} inválido");
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
         }
 
         private void CinemaForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (applicationContext.Cinemas.Count() == 0)
+            if (appContext.Cinemas.Count() == 0)
             {
                 MessageBox.Show("Dados do cinema não inseridos");
                 return;
             }
         }
-
     }
 }
