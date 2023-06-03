@@ -21,6 +21,9 @@ namespace CineGuest
         {
             InitializeComponent();
 
+            //Verificação de cinema criado.
+            //Caso exista, os dados guardados são expostos nas texts box referentes aos dados do cinema e o texto do butão é alterado.
+            //Caso não exista, o texto do botão fica normal()embora forçado e o user tem de preencer os dados
             bool exist_cinema = appContext.Cinemas.Count() > 0;
 
             if (!exist_cinema)
@@ -39,13 +42,14 @@ namespace CineGuest
                 btnUpdateCinema.Text = "Atualizar";
             }
 
-            lbSala.SelectedIndex = -1;
+            //Limpeza de labels e atualização da lista de salas
             updateListBox();
             ClearLabels();
         }
 
         private void CinemaForm_Load(object sender, EventArgs e)
         {
+            //Colocação do nome do cinema no nome do form
             string nome = appContext.Cinemas.First().nome;
             this.Text = $"{nome} | Cinema";
             updateListBox();
@@ -54,19 +58,24 @@ namespace CineGuest
 
         private void btnUpdateCinema_Click(object sender, EventArgs e)
         {
+            //Leitura de dados inseridos
             string nome = tbNomeCinema.Text;
             string morada = tbMoradalCinema.Text;
             string email = tbEmailCinema.Text;
 
+            //verificação de dados
             if(ConfirmaString(nome, "Nome") == true || ConfirmaEmail(email, "Email") == true || ConfirmaString(morada, "Morada"))
             {
                 return;
             }
             
+            //verificação de existencia de cinema
             bool exist_cinema = appContext.Cinemas.Count() > 0;
 
+            //Adição de dados do cinema na base de dades
             if (!exist_cinema)
             {
+                
                 Cinema cinema = new Cinema(); 
 
                 cinema.nome = nome;
@@ -86,7 +95,7 @@ namespace CineGuest
                 cine.email = email;
                 appContext.Cinemas.AddOrUpdate(cine);
             }
-
+            //Guardar base de dados
             appContext.SaveChanges();
             btnUpdateCinema.Text = "Atualizar";
 
@@ -95,11 +104,13 @@ namespace CineGuest
 
         private void btnAddSala_Click(object sender, EventArgs e)
         {
-            //add db
             
+            //leitura de index selecionado na list box
             int select = lbSala.SelectedIndex;
+            //se null, adiciona nova sala
             if (select == -1)
             {
+                //Leitura de dados inseridos
                 btnAddSala.Text = "Adicionar";
                 string nome = tbNomeSala.Text;
                 string colunas = tbColunasSala.Text;
@@ -123,6 +134,7 @@ namespace CineGuest
                     appContext.SaveChanges();
                 }
             }
+            //se valido, atualiza dados do index selecionados
             else
             {
                 string nome = tbNomeSala.Text;
@@ -160,6 +172,7 @@ namespace CineGuest
 
         private void lbNome_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Leitura e verificação de index selecionado na list box
             int select = lbSala.SelectedIndex;
             if (select == -1)
             {
@@ -169,7 +182,7 @@ namespace CineGuest
             else
             {
                 Sala sala = lbSala.SelectedItem as Sala;
-
+                //Coloccação dos dados selecionados nos input boxs
                 tbNomeSala.Text = sala.nome;
                 tbColunasSala.Text = sala.colunas + "";
                 tbLinhasSala.Text = sala.linhas + "";
@@ -187,6 +200,7 @@ namespace CineGuest
             }
             else
             {
+                //remove de ocorrencia da base de dados
                 Sala sala = appContext.Salas.ToList()[select];
                 appContext.Salas.Remove(sala);
                 appContext.SaveChanges();
@@ -198,6 +212,7 @@ namespace CineGuest
 
         private void ClearLabels()
         {
+            //limpeza de input boxs
             lbSala.SelectedIndex= -1;
             tbNomeSala.Clear();
             tbColunasSala.Clear();
@@ -206,10 +221,12 @@ namespace CineGuest
 
         private void updateListBox()
         {
+            //Atualização da ListBox
             lbSala.DataSource = null;
             lbSala.DataSource = appContext.Salas.ToList();
         }
 
+        //Confirmaçãoo de string
         public bool ConfirmaString(string verificar, string dado)
         {
             if (verificar == string.Empty)
@@ -223,6 +240,7 @@ namespace CineGuest
             }
         }
 
+        //Confirmação de inteiros
         public bool ConfirmaInt(string verificar, string dado)
         {
             int data;
@@ -243,6 +261,7 @@ namespace CineGuest
             }
         }
 
+        //Confirmação de email
         public bool ConfirmaEmail(string verificar, string dado)
         {
             string vefifyemail = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
@@ -257,6 +276,7 @@ namespace CineGuest
             }
         }
 
+        //Confirmação se dados foram inseridos
         private void CinemaForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (appContext.Cinemas.Count() == 0)
