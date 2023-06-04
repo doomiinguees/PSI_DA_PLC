@@ -18,7 +18,6 @@ namespace CineGuest
         public MainForm()
         {
             InitializeComponent();
-            //appContext
 
             
 
@@ -30,7 +29,7 @@ namespace CineGuest
                 CinemaForm cineForm = new CinemaForm();
                 cineForm.ShowDialog();
             }
-            
+            /*
             string nome = appContext.Cinemas.First().nome;
             this.Text = $"{nome}";
 
@@ -43,7 +42,7 @@ namespace CineGuest
             foreach (Sessao sessao in sessoes)
             {
                 lbSessoesMain.Items.Add(sessao);
-            }
+            }*/
         }
 
         private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,11 +110,11 @@ namespace CineGuest
 
             Bilhete bilhete = new Bilhete();
 
-            bilhete.IdSessao = sessao.id;
+            /*bilhete.IdSessao = sessao.id;
             bilhete.IdFuncionario = funcionario.Id;
-
-
-            //atendimentoForm.ShowDialog(bilhete);
+*/
+/*
+            atendimentoForm.ShowDialog(bilhete);*/
 
         }
     }

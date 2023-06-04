@@ -37,6 +37,8 @@
             this.cbUser = new System.Windows.Forms.ComboBox();
             this.dtpDiadeSessao = new System.Windows.Forms.DateTimePicker();
             this.lbSessoesMain = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.msMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +97,7 @@
             // 
             this.cbUser.FormattingEnabled = true;
             this.cbUser.Location = new System.Drawing.Point(446, 3);
-            this.cbUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbUser.Margin = new System.Windows.Forms.Padding(2);
             this.cbUser.Name = "cbUser";
             this.cbUser.Size = new System.Drawing.Size(140, 21);
             this.cbUser.TabIndex = 1;
@@ -107,7 +109,7 @@
             this.dtpDiadeSessao.CustomFormat = "dd/MM/yyyy";
             this.dtpDiadeSessao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDiadeSessao.Location = new System.Drawing.Point(204, 67);
-            this.dtpDiadeSessao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDiadeSessao.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDiadeSessao.MinDate = new System.DateTime(2023, 6, 4, 0, 0, 0, 0);
             this.dtpDiadeSessao.Name = "dtpDiadeSessao";
             this.dtpDiadeSessao.Size = new System.Drawing.Size(186, 20);
@@ -118,23 +120,43 @@
             // 
             this.lbSessoesMain.FormattingEnabled = true;
             this.lbSessoesMain.Location = new System.Drawing.Point(82, 89);
-            this.lbSessoesMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbSessoesMain.Margin = new System.Windows.Forms.Padding(2);
             this.lbSessoesMain.Name = "lbSessoesMain";
             this.lbSessoesMain.Size = new System.Drawing.Size(422, 225);
             this.lbSessoesMain.TabIndex = 3;
             this.lbSessoesMain.DoubleClick += new System.EventHandler(this.lbSessoesMain_DoubleClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(535, 135);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(535, 175);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "label2";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 346);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbSessoesMain);
             this.Controls.Add(this.dtpDiadeSessao);
             this.Controls.Add(this.cbUser);
             this.Controls.Add(this.msMain);
             this.MainMenuStrip = this.msMain;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CineGuest";
@@ -157,6 +179,8 @@
         private System.Windows.Forms.ComboBox cbUser;
         private System.Windows.Forms.DateTimePicker dtpDiadeSessao;
         private System.Windows.Forms.ListBox lbSessoesMain;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

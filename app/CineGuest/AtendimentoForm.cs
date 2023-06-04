@@ -23,8 +23,8 @@ namespace CineGuest
         private void AtendimentoForm_Load(object sender, EventArgs e)
         {
             
-            string nome = appContext.Cinemas.First().nome;
-            this.Text = $"{nome} | Venda de Bilhetes";
+           /* string nome = appContext.Cinemas.First().nome;
+            this.Text = $"{nome} | Venda de Bilhetes";*/
             tabSala.SuspendLayout();
             tabSala.Controls.Clear();
             int dez = 14;
