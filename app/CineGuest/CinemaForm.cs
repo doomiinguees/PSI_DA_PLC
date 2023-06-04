@@ -49,9 +49,15 @@ namespace CineGuest
 
         private void CinemaForm_Load(object sender, EventArgs e)
         {
-            //Colocação do nome do cinema no nome do form
-            string nome = appContext.Cinemas.First().nome;
-            this.Text = $"{nome} | Cinema";
+            bool exist_cinema = appContext.Cinemas.Count() > 0;
+
+            if (exist_cinema)
+            {
+                //Colocação do nome do cinema no nome do form
+                string nome = appContext.Cinemas.First().nome;
+                this.Text = $"{nome} | Cinema";
+            }
+            
             updateListBox();
             ClearLabels();
         }

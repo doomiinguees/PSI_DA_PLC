@@ -85,16 +85,36 @@ namespace CineGuest
 
         private void dtpDiadeSessao_ValueChanged(object sender, EventArgs e)
         {
-            string data = dtpDiadeSessao.Value.ToString("dd/MM/yyyy");
             
-            List<Sessao> sessoes = appContext.Sessoes.Where(s => s.Data.ToString() == data).ToList();
+            
+            var sessoes = appContext.Sessoes.ToList();
 
-            lbSessoesMain.Items.Clear();
 
-            foreach (Sessao sessao in sessoes)
+            foreach (var sessao in sessoes)
             {
-                lbSessoesMain.Items.Add(sessao);
+                if (sessao.Data == dtpDiadeSessao.Value.ToString("dd/MM/yyyy"))
+                {
+                    lbSessoesMain.Items.Add(sessao);
+                }
             }
+        }
+
+        private void lbSessoesMain_DoubleClick(object sender, EventArgs e)
+        {
+            AtendimentoForm atendimentoForm = new AtendimentoForm();
+
+            Sessao sessao = (Sessao)lbSessoesMain.SelectedItem;
+
+            Funcionario funcionario = (Funcionario)cbUser.SelectedItem;
+
+            Bilhete bilhete = new Bilhete();
+            /*
+            bilhete.IdSessao = sessao.id;
+            bilhete.IdFuncionario = funcionario.Id;
+
+            atendimentoForm.Bilhete =bilhete;
+            atendimentoForm.ShowDialog();
+            */
         }
     }
 

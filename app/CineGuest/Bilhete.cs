@@ -10,6 +10,8 @@ namespace CineGuest
     {
         public string lugar { get; set; }
         public string estado { get; set; }
+        public int IdSessao { get; set; }
+        public int IdFuncionario { get; set; }
 
         public Bilhete()
         {
