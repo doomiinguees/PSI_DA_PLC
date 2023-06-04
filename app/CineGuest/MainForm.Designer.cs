@@ -107,7 +107,6 @@
             this.dtpDiadeSessao.Location = new System.Drawing.Point(272, 82);
             this.dtpDiadeSessao.MinDate = new System.DateTime(2023, 6, 4, 0, 0, 0, 0);
             this.dtpDiadeSessao.Name = "dtpDiadeSessao";
-            this.dtpDiadeSessao.ShowUpDown = true;
             this.dtpDiadeSessao.Size = new System.Drawing.Size(246, 22);
             this.dtpDiadeSessao.TabIndex = 2;
             this.dtpDiadeSessao.ValueChanged += new System.EventHandler(this.dtpDiadeSessao_ValueChanged);
