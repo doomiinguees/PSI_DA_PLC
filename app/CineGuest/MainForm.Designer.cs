@@ -35,6 +35,8 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cbUser = new System.Windows.Forms.ComboBox();
+            this.dtpDiadeSessao = new System.Windows.Forms.DateTimePicker();
+            this.lbSessoesMain = new System.Windows.Forms.ListBox();
             this.msMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,60 +51,83 @@
             this.funcionáriosToolStripMenuItem});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
-            this.msMain.Size = new System.Drawing.Size(800, 30);
+            this.msMain.Size = new System.Drawing.Size(792, 28);
             this.msMain.TabIndex = 0;
             this.msMain.Text = "menuStrip1";
             // 
             // cinemaToolStripMenuItem
             // 
             this.cinemaToolStripMenuItem.Name = "cinemaToolStripMenuItem";
-            this.cinemaToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
+            this.cinemaToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.cinemaToolStripMenuItem.Text = "Cinema";
             this.cinemaToolStripMenuItem.Click += new System.EventHandler(this.cinemaToolStripMenuItem_Click);
             // 
             // filmesToolStripMenuItem
             // 
             this.filmesToolStripMenuItem.Name = "filmesToolStripMenuItem";
-            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(65, 26);
+            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.filmesToolStripMenuItem.Text = "Filmes";
             this.filmesToolStripMenuItem.Click += new System.EventHandler(this.filmesToolStripMenuItem_Click);
             // 
             // sessõesToolStripMenuItem
             // 
             this.sessõesToolStripMenuItem.Name = "sessõesToolStripMenuItem";
-            this.sessõesToolStripMenuItem.Size = new System.Drawing.Size(74, 26);
+            this.sessõesToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.sessõesToolStripMenuItem.Text = "Sessões";
             this.sessõesToolStripMenuItem.Click += new System.EventHandler(this.sesõesToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // funcionáriosToolStripMenuItem
             // 
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
-            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(106, 26);
+            this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
             this.funcionáriosToolStripMenuItem.Click += new System.EventHandler(this.funcionáriosToolStripMenuItem_Click);
             // 
             // cbUser
             // 
             this.cbUser.FormattingEnabled = true;
-            this.cbUser.Location = new System.Drawing.Point(602, 4);
+            this.cbUser.Location = new System.Drawing.Point(594, 4);
             this.cbUser.Name = "cbUser";
             this.cbUser.Size = new System.Drawing.Size(186, 24);
             this.cbUser.TabIndex = 1;
             this.cbUser.Text = "<Selecionar Funcionário>";
             this.cbUser.SelectedIndexChanged += new System.EventHandler(this.cbUser_SelectedIndexChanged);
             // 
+            // dtpDiadeSessao
+            // 
+            this.dtpDiadeSessao.CustomFormat = "dd/MM/yyyy";
+            this.dtpDiadeSessao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDiadeSessao.Location = new System.Drawing.Point(272, 82);
+            this.dtpDiadeSessao.MinDate = new System.DateTime(2023, 6, 4, 0, 0, 0, 0);
+            this.dtpDiadeSessao.Name = "dtpDiadeSessao";
+            this.dtpDiadeSessao.ShowUpDown = true;
+            this.dtpDiadeSessao.Size = new System.Drawing.Size(246, 22);
+            this.dtpDiadeSessao.TabIndex = 2;
+            this.dtpDiadeSessao.ValueChanged += new System.EventHandler(this.dtpDiadeSessao_ValueChanged);
+            // 
+            // lbSessoesMain
+            // 
+            this.lbSessoesMain.FormattingEnabled = true;
+            this.lbSessoesMain.ItemHeight = 16;
+            this.lbSessoesMain.Location = new System.Drawing.Point(109, 110);
+            this.lbSessoesMain.Name = "lbSessoesMain";
+            this.lbSessoesMain.Size = new System.Drawing.Size(562, 276);
+            this.lbSessoesMain.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(792, 426);
+            this.Controls.Add(this.lbSessoesMain);
+            this.Controls.Add(this.dtpDiadeSessao);
             this.Controls.Add(this.cbUser);
             this.Controls.Add(this.msMain);
             this.MainMenuStrip = this.msMain;
@@ -126,6 +151,8 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem funcionáriosToolStripMenuItem;
         private System.Windows.Forms.ComboBox cbUser;
+        private System.Windows.Forms.DateTimePicker dtpDiadeSessao;
+        private System.Windows.Forms.ListBox lbSessoesMain;
     }
 }
 

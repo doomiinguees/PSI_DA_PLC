@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,22 +19,34 @@ namespace CineGuest
         {
             InitializeComponent();
 
-            /*
-             * busca dados das sessoes e preenche a main
+            
 
-            for (int i = 0; i < linha; i++)
+        }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (appContext.Cinemas.Count() == 0)
             {
-                for (int j = 0; j < coluna; j++)
-                {
-                    Button butao = new Button();
-                    butao.Size = new Size(40, 25);
-                    butao.Text = (char)(i + 65) + " | " + (j + 1);
-                    tabSala.Controls.Add(butao, j, i);
-
-                    butao.Click += Butao_Click;
-                }
+                CinemaForm cineForm = new CinemaForm();
+                cineForm.ShowDialog();
             }
-            */
+            string nome = appContext.Cinemas.First().nome;
+            this.Text = $"{nome}";
+
+            string data = DateTime.Now.ToString("dd/MM/yyyy");
+
+            List<Sessao> sessoes = appContext.Sessoes.Where(s => s.Data == data).ToList();
+
+            lbSessoesMain.Items.Clear();
+
+            foreach (Sessao sessao in sessoes)
+            {
+                lbSessoesMain.Items.Add(sessao);
+            }
+        }
+
+        private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string funcionario = cbUser.Text;
         }
 
         private void cinemaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,31 +76,26 @@ namespace CineGuest
             clienteForm.ShowDialog();
         }
 
-        private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            if (appContext.Cinemas.Count() == 0)
-            {
-                CinemaForm cineForm = new CinemaForm();
-                cineForm.ShowDialog();
-            }
-            string nome = appContext.Cinemas.First().nome;
-            this.Text = $"{nome}";
-            /*
-             * pedir ajuda para colocar o nome dos funcionários na combobox
-            */
-
-
-        }
 
         private void sesõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SessaoForm sessaoForm = new SessaoForm();
             sessaoForm.ShowDialog();
         }
+
+        private void dtpDiadeSessao_ValueChanged(object sender, EventArgs e)
+        {
+            string data = dtpDiadeSessao.Value.ToString("dd/MM/yyyy");
+            
+            List<Sessao> sessoes = appContext.Sessoes.Where(s => s.Data.ToString() == data).ToList();
+
+            lbSessoesMain.Items.Clear();
+
+            foreach (Sessao sessao in sessoes)
+            {
+                lbSessoesMain.Items.Add(sessao);
+            }
+        }
     }
+
 }

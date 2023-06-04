@@ -74,6 +74,7 @@
             this.dtaSessao.Location = new System.Drawing.Point(20, 239);
             this.dtaSessao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtaSessao.Name = "dtaSessao";
+            this.dtaSessao.ShowUpDown = true;
             this.dtaSessao.Size = new System.Drawing.Size(333, 22);
             this.dtaSessao.TabIndex = 9;
             // 
