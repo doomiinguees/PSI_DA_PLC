@@ -128,6 +128,15 @@ namespace CineGuest
             }
             else
             {
+                List<Cliente> clientes = appContext.Clientes.ToList();
+                foreach (var item in clientes)
+                {
+                    if (item.NIF == int.Parse(verificar))
+                    {
+                        MessageBox.Show($"{dado} inválid@");
+                        return true;
+                    }
+                }
                 return false;
             }
         }

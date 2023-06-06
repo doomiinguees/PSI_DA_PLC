@@ -16,6 +16,7 @@ namespace CineGuest
     {
         ApplicationContext appContext = new ApplicationContext();
         Bilhete bilhete = null;
+        float total;
         public AtendimentoForm()
         {
             InitializeComponent();
@@ -25,41 +26,34 @@ namespace CineGuest
         private void AtendimentoForm_Load(object sender, EventArgs e)
         {
             
-           /* string nome = appContext.Cinemas.First().nome;
-            this.Text = $"{nome} | Venda de Bilhetes";*/
             tabSala.SuspendLayout();
             Sessao sessao = appContext.Sessoes.First(s => s.id == this.bilhete.IdSessao);
             Sala sala = appContext.Salas.First(s => s.nome == sessao.Salas);
-
 
             int coluna = sala.colunas;
             int linha = sala.linhas;
             tabSala.ColumnCount = coluna;
             tabSala.RowCount = linha;
 
-
-
-
-
             for (int i=0; i < linha; i++)
             {
                 for (int j=0; j < coluna; j++)
                 {
                     Button butao = new Button();
-                    butao.Size = new Size(45, 25);
+                    butao.Size = new Size(60, 30);
+                    
                     butao.Text = (char)(i + 65) + " | " + (j + 1);
                     tabSala.Controls.Add(butao, j, i);
-
                     butao.Click += Butao_Click;
                 }
             }
-
             tabSala.ResumeLayout();
             tabSala.AutoScroll = true;
         }
 
         private void Butao_Click(object sender, EventArgs e)
         {
+
             if (((Button)sender).BackColor == Color.Red)
             {
                 MessageBox.Show("Ligar já ocupado");
@@ -70,6 +64,11 @@ namespace CineGuest
                 string but = ((Button)sender).Text;
 
                 lbBancos.Items.Add(but);
+                Sessao sessao = appContext.Sessoes.First(s => s.id == this.bilhete.IdSessao);
+
+                total = total + sessao.Preco;
+                lblPrice.Text = $"{(float)Math.Round(total, 2)} €";
+                Console.WriteLine(total);
             }
         }
 
@@ -88,7 +87,6 @@ namespace CineGuest
         public void MostrarDados(Bilhete bilhete)
         {
             
-            Console.WriteLine(bilhete.IdSessao);
             this.bilhete = bilhete;
             ShowDialog();
         }

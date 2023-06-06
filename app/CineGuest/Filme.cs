@@ -12,7 +12,7 @@ namespace CineGuest
         [Key]
         public int id { get; set; }
         public string Nome { get; set; }
-        public string Duracao { get; set; }
+        public TimeSpan Duracao { get; set; }
         public string Estado { get; set; }
         public string Categoria { get; set; }
 

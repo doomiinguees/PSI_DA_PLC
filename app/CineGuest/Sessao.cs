@@ -13,8 +13,8 @@ namespace CineGuest
         public int id { get; set; }
         public string Salas { get; set; }
         public string Filmes { get; set; }
-        public string Data { get; set; }
-        public string Hora { get; set; }
+        public DateTime Data { get; set; }
+        public TimeSpan Hora { get; set; }
         public float Preco { get; set; }
 
         public Sessao() { }

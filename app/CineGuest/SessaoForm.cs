@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +32,10 @@ namespace CineGuest
 
             foreach (var iten in appContext.Filmes)
             {
-                cbFilme.Items.Add(iten.Nome);
+                if (iten.Estado == "Ativo")
+                {
+                    cbFilme.Items.Add(iten.Nome);
+                }
             }
 
             UpdateList();
@@ -47,10 +52,15 @@ namespace CineGuest
                 string sala = cbSala.Text.ToString();
                 string filme = cbFilme.Text.ToString();
                 string precostr = tbPrecoSessao.Text;
-                string hora = hrSessao.Value.ToString("HH:mm");
                 string data = dtaSessao.Value.ToString("dd/MM/yyyy");
+                DateTime tempo = hrSessao.Value;
+                int horas = tempo.Hour;
+                int minutos = tempo.Minute;
+                int segundos = tempo.Second;
 
-                
+                TimeSpan hora = new TimeSpan(horas, minutos, segundos);
+
+
 
                 if (ConfirmaString(sala, "Sala") == true || ConfirmaString(filme, "Filme") == true || ConfirmaFloat(precostr, "Preço") == true)
                 {
@@ -58,6 +68,11 @@ namespace CineGuest
                 }
                 else
                 {
+                    Filme film = appContext.Filmes.FirstOrDefault(f => f.Nome == filme);
+
+                    
+
+
                     float preco = float.Parse(precostr);
 
                     sessao.Salas = sala;
@@ -78,7 +93,12 @@ namespace CineGuest
                 string sala = cbSala.Text.ToString();
                 string filme = cbFilme.Text.ToString();
                 string precostr = tbPrecoSessao.Text;
-                string hora = hrSessao.Value.ToString("HH:mm");
+                DateTime tempo = hrSessao.Value;
+                int horas = tempo.Hour;
+                int minutos = tempo.Minute;
+                int segundos = tempo.Second;
+
+                TimeSpan hora = new TimeSpan(horas, minutos, segundos);
                 string data = dtaSessao.Value.ToString("dd/MM/yyyy");
 
                 if (ConfirmaString(sala, "Sala") == true || ConfirmaString(filme, "Filme") == true || ConfirmaString(precostr, "Preço") == true)
@@ -124,7 +144,7 @@ namespace CineGuest
                 cbSala.Text = sessao.Salas.ToString();
                 tbPrecoSessao.Text = sessao.Preco.ToString();
                 dtaSessao.Value = DateTime.Parse(sessao.Data);
-                hrSessao.Value = DateTime.Parse(sessao.Hora);
+                hrSessao.Value = DateTime.Today.Add(sessao.Hora);
 
                 btnAddSessao.Text = "Atualizar Sessão";
 
@@ -180,5 +200,35 @@ namespace CineGuest
             hrSessao.Value = DateTime.Parse(DateTime.Now.ToString("HH:mm"));
         }
 
+       /* public bool VerificarSobreposicaoFilmesSala(Sessao novaSessao)
+        {
+
+            List<Sessao> sessoesExistentes = appContext.Sessoes.ToList();
+
+            Filme filme = appContext.Filmes.FirstOrDefault(f => f.Nome == novaSessao.Filmes);
+
+            foreach (Sessao sessaoExistente in sessoesExistentes)
+            {
+                // Verifica se as salas são iguais
+                if (sessaoExistente.Salas == novaSessao.Salas)
+                {
+                    // Verifica se há sobreposição de horários
+                    DateTime inicioExistente = DateTime.Parse(sessaoExistente.Data) + sessaoExistente.Hora;
+                    DateTime fimExistente = inicioExistente.(appContext.Filmes.FirstOrDefault(filme.Duracao);
+
+                    DateTime inicioNova = DateTime.Parse(novaSessao.Data) + novaSessao.Hora;
+                    DateTime fimNova = inicioNova.AddMinutes(novaSessao.Filme.Duracao.TotalMinutes);
+
+                    if (inicioNova < fimExistente && fimNova > inicioExistente)
+                    {
+                        // Há sobreposição de horários, não é permitido criar a sessão
+                        return false;
+                    }
+                }
+            }
+
+            // Não há sobreposição de horários, a criação da sessão é permitida
+            return true;
+        }*/
     }
 }

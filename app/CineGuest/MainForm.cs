@@ -45,8 +45,6 @@ namespace CineGuest
             {
                 cbUser.Items.Add(funcionario.Nome);
             }
-
-            cbUser.SelectedIndex= 0;
         }
 
         private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
