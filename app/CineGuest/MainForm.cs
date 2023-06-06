@@ -18,7 +18,6 @@ namespace CineGuest
         public MainForm()
         {
             InitializeComponent();
-            //appContext
 
             
 
@@ -40,10 +39,14 @@ namespace CineGuest
 
             lbSessoesMain.Items.Clear();
 
-            foreach (Sessao sessao in sessoes)
+            List<Funcionario> funcionarios = appContext.Funcionarios.ToList();
+
+            foreach (Funcionario funcionario in funcionarios)
             {
-                lbSessoesMain.Items.Add(sessao);
+                cbUser.Items.Add(funcionario.Nome);
             }
+
+            cbUser.SelectedIndex= 0;
         }
 
         private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
@@ -107,7 +110,9 @@ namespace CineGuest
 
             Sessao sessao = (Sessao)lbSessoesMain.SelectedItem;
 
-            Funcionario funcionario = (Funcionario)cbUser.SelectedItem;
+            string nome = cbUser.SelectedItem.ToString();
+
+            Funcionario funcionario = appContext.Funcionarios.FirstOrDefault(f => f.Nome == nome);
 
             Bilhete bilhete = new Bilhete();
 
@@ -115,7 +120,7 @@ namespace CineGuest
             bilhete.IdFuncionario = funcionario.Id;
 
 
-            //atendimentoForm.ShowDialog(bilhete);
+            atendimentoForm.MostrarDados(bilhete);
 
         }
     }

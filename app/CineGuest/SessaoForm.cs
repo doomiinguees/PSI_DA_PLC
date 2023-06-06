@@ -23,7 +23,7 @@ namespace CineGuest
 
         private void SessaoForm_Load(object sender, EventArgs e)
         {
-            /*foreach (var item in appContext.Salas)
+            foreach (var item in appContext.Salas)
             {
                 cbSala.Items.Add(item.nome);
             }
@@ -31,7 +31,7 @@ namespace CineGuest
             foreach (var iten in appContext.Filmes)
             {
                 cbFilme.Items.Add(iten.Nome);
-            }*/
+            }
 
             UpdateList();
             ClearInputs();

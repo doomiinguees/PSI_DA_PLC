@@ -289,6 +289,7 @@ namespace CineGuest
             {
                 MessageBox.Show("Dados do cinema não inseridos");
                 return;
+
             }
         }
     }

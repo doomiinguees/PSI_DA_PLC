@@ -69,7 +69,7 @@
             this.tabSala.Name = "tabSala";
             this.tabSala.RowCount = 1;
             this.tabSala.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tabSala.Size = new System.Drawing.Size(915, 624);
+            this.tabSala.Size = new System.Drawing.Size(1123, 707);
             this.tabSala.TabIndex = 0;
             // 
             // gbSala
@@ -77,7 +77,7 @@
             this.gbSala.Controls.Add(this.tabSala);
             this.gbSala.Location = new System.Drawing.Point(235, 31);
             this.gbSala.Name = "gbSala";
-            this.gbSala.Size = new System.Drawing.Size(927, 651);
+            this.gbSala.Size = new System.Drawing.Size(1140, 741);
             this.gbSala.TabIndex = 1;
             this.gbSala.TabStop = false;
             this.gbSala.Text = "Sala";
@@ -132,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 694);
+            this.ClientSize = new System.Drawing.Size(1376, 771);
             this.Controls.Add(this.btnCreateClient);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.cbCliente);

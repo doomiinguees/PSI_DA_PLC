@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace CineGuest
     public partial class AtendimentoForm : Form
     {
         ApplicationContext appContext = new ApplicationContext();
+        Bilhete bilhete = null;
         public AtendimentoForm()
         {
             InitializeComponent();
@@ -26,25 +28,25 @@ namespace CineGuest
            /* string nome = appContext.Cinemas.First().nome;
             this.Text = $"{nome} | Venda de Bilhetes";*/
             tabSala.SuspendLayout();
-            tabSala.Controls.Clear();
-            int dez = 14;
-            int trinta = 30;
-            tabSala.ColumnCount = dez;
-            tabSala.RowCount = trinta;
-            int coluna = dez;
-            int linha = trinta;
-            
-            /*get dados da sala ligada à sessao*/
-            
+            Sessao sessao = appContext.Sessoes.First(s => s.id == this.bilhete.IdSessao);
+            Sala sala = appContext.Salas.First(s => s.nome == sessao.Salas);
 
-            
+
+            int coluna = sala.colunas;
+            int linha = sala.linhas;
+            tabSala.ColumnCount = coluna;
+            tabSala.RowCount = linha;
+
+
+
+
 
             for (int i=0; i < linha; i++)
             {
                 for (int j=0; j < coluna; j++)
                 {
                     Button butao = new Button();
-                    butao.Size = new Size(40, 25);
+                    butao.Size = new Size(45, 25);
                     butao.Text = (char)(i + 65) + " | " + (j + 1);
                     tabSala.Controls.Add(butao, j, i);
 
@@ -81,6 +83,14 @@ namespace CineGuest
             ClienteForm cliente = new ClienteForm();
 
             cliente.ShowDialog();
+        }
+
+        public void MostrarDados(Bilhete bilhete)
+        {
+            
+            Console.WriteLine(bilhete.IdSessao);
+            this.bilhete = bilhete;
+            ShowDialog();
         }
     }
 }
