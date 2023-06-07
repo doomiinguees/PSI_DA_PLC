@@ -33,18 +33,20 @@ namespace CineGuest
             string nome = appContext.Cinemas.First().nome;
             this.Text = $"{nome}";
 
-            string data = DateTime.Now.ToString("dd/MM/yyyy");
+            DateTime dataAtual = dtpDiadeSessao.Value.Date;
 
-            List<Sessao> sessoes = appContext.Sessoes.Where(s => s.Data == data).ToList();
+            List<Sessao> sessoes = appContext.Sessoes.Where(s => s.Data == dataAtual).ToList();
 
             lbSessoesMain.Items.Clear();
 
+            foreach (Sessao sessao in sessoes)
+            {
+                lbSessoesMain.Items.Add(sessao);
+            }
+
             List<Funcionario> funcionarios = appContext.Funcionarios.ToList();
 
-            foreach (Funcionario funcionario in funcionarios)
-            {
-                cbUser.Items.Add(funcionario.Nome);
-            }
+            UpdateUser();
         }
 
         private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
@@ -71,6 +73,7 @@ namespace CineGuest
         {
             FunconarioForm funconarioForm = new FunconarioForm();
             funconarioForm.ShowDialog();
+            UpdateUser();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,7 +98,8 @@ namespace CineGuest
 
             foreach (var sessao in sessoes)
             {
-                if (sessao.Data == dtpDiadeSessao.Value.ToString("dd/MM/yyyy"))
+                DateTime dataSelecionada = new DateTime(dtpDiadeSessao.Value.Day, dtpDiadeSessao.Value.Month, dtpDiadeSessao.Value.Day);
+                if (sessao.Data == dataSelecionada)
                 {
                     lbSessoesMain.Items.Add(sessao);
                 }
@@ -120,6 +124,15 @@ namespace CineGuest
 
             atendimentoForm.MostrarDados(bilhete);
 
+        }
+
+        private void UpdateUser()
+        {
+            List<Funcionario> funcionarios = appContext.Funcionarios.ToList();
+            foreach (Funcionario funcionario in funcionarios)
+            {
+                    cbUser.Items.Add(funcionario.Nome);
+            }
         }
     }
 

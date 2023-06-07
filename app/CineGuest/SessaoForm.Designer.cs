@@ -97,7 +97,7 @@
             // 
             // hrSessao
             // 
-            this.hrSessao.CustomFormat = "hh:mm";
+            this.hrSessao.CustomFormat = "HH:mm";
             this.hrSessao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.hrSessao.Location = new System.Drawing.Point(20, 299);
             this.hrSessao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

@@ -52,7 +52,7 @@ namespace CineGuest
                 string sala = cbSala.Text.ToString();
                 string filme = cbFilme.Text.ToString();
                 string precostr = tbPrecoSessao.Text;
-                string data = dtaSessao.Value.ToString("dd/MM/yyyy");
+                DateTime data = dtaSessao.Value.Date;
                 DateTime tempo = hrSessao.Value;
                 int horas = tempo.Hour;
                 int minutos = tempo.Minute;
@@ -68,10 +68,20 @@ namespace CineGuest
                 }
                 else
                 {
-                    Filme film = appContext.Filmes.FirstOrDefault(f => f.Nome == filme);
+                    Filme film = appContext.Filmes.First(f => f.Nome == filme);
 
-                    
-
+                    foreach (var item in appContext.Sessoes.ToList())
+                    {
+                        Filme filmReg = appContext.Filmes.First(f => f.Nome == item.Filmes);
+                        if (item.Salas == sala && item.Data == data)
+                        {
+                            if (hora + film.Duracao > item.Hora || hora < item.Hora + filmReg.Duracao)
+                            {
+                                MessageBox.Show("A sessão não pode ser inserida por sobrepor a outra");
+                                return;
+                            }
+                        }
+                    }
 
                     float preco = float.Parse(precostr);
 
@@ -99,7 +109,7 @@ namespace CineGuest
                 int segundos = tempo.Second;
 
                 TimeSpan hora = new TimeSpan(horas, minutos, segundos);
-                string data = dtaSessao.Value.ToString("dd/MM/yyyy");
+                DateTime data = dtaSessao.Value.Date;
 
                 if (ConfirmaString(sala, "Sala") == true || ConfirmaString(filme, "Filme") == true || ConfirmaString(precostr, "Preço") == true)
                 {
@@ -143,7 +153,7 @@ namespace CineGuest
                 cbFilme.Text = sessao.Filmes.ToString();
                 cbSala.Text = sessao.Salas.ToString();
                 tbPrecoSessao.Text = sessao.Preco.ToString();
-                dtaSessao.Value = DateTime.Parse(sessao.Data);
+                dtaSessao.Value = sessao.Data;
                 hrSessao.Value = DateTime.Today.Add(sessao.Hora);
 
                 btnAddSessao.Text = "Atualizar Sessão";

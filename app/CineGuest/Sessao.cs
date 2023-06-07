@@ -30,7 +30,7 @@ namespace CineGuest
 
         public override string ToString()
         {
-            return $"{Filmes} | {Salas} | {Data} {Hora} | {Preco}€";
+            return $"{Filmes} | {Salas} | {Data.Date} {Hora} | {Preco}€";
         }
     }
 }
