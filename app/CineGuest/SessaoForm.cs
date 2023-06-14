@@ -117,6 +117,7 @@ namespace CineGuest
                 }
                 else
                 {
+                    
                     float preco = float.Parse(precostr);
 
                     sessao.Salas = sala;
@@ -124,7 +125,10 @@ namespace CineGuest
                     sessao.Preco = preco;
                     sessao.Data = data;
                     sessao.Hora = hora;
+                    if (VerificarSobreposicaoFilmesSala(sessao))
+                    {
 
+                    }
                     appContext.Sessoes.AddOrUpdate(sessao);
                     appContext.SaveChanges();
 
@@ -206,11 +210,11 @@ namespace CineGuest
             cbFilme.SelectedItem = 0;
             tbPrecoSessao.Clear();
             lbSessoes.SelectedIndex= -1;
-            dtaSessao.Value = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy"));
+            dtaSessao.Value = DateTime.Now.Date;
             hrSessao.Value = DateTime.Parse(DateTime.Now.ToString("HH:mm"));
         }
 
-       /* public bool VerificarSobreposicaoFilmesSala(Sessao novaSessao)
+       private bool VerificarSobreposicaoFilmesSala(Sessao novaSessao)
         {
 
             List<Sessao> sessoesExistentes = appContext.Sessoes.ToList();
@@ -223,11 +227,11 @@ namespace CineGuest
                 if (sessaoExistente.Salas == novaSessao.Salas)
                 {
                     // Verifica se há sobreposição de horários
-                    DateTime inicioExistente = DateTime.Parse(sessaoExistente.Data) + sessaoExistente.Hora;
-                    DateTime fimExistente = inicioExistente.(appContext.Filmes.FirstOrDefault(filme.Duracao);
+                    DateTime inicioExistente = sessaoExistente.Data + sessaoExistente.Hora;
+                    DateTime fimExistente = inicioExistente + appContext.Filmes.Where( f => f.Nome.ToLower() == sessaoExistente.Filmes.ToLower()).First().Duracao;
 
-                    DateTime inicioNova = DateTime.Parse(novaSessao.Data) + novaSessao.Hora;
-                    DateTime fimNova = inicioNova.AddMinutes(novaSessao.Filme.Duracao.TotalMinutes);
+                    DateTime inicioNova = novaSessao.Data + novaSessao.Hora;
+                    DateTime fimNova = inicioNova + appContext.Filmes.Where(f => f.Nome.ToLower() == novaSessao.Filmes.ToLower()).First().Duracao;
 
                     if (inicioNova < fimExistente && fimNova > inicioExistente)
                     {
@@ -239,6 +243,6 @@ namespace CineGuest
 
             // Não há sobreposição de horários, a criação da sessão é permitida
             return true;
-        }*/
+        }
     }
 }

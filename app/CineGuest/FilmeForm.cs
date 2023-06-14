@@ -23,13 +23,7 @@ namespace CineGuest
         private void FilmeForm_Load(object sender, EventArgs e)
         {
             string nome = appContext.Cinemas.First().nome;
-            this.Text = $"{nome} | Filmes";
-
-            cbCategoria.Items.Add("Acção");
-            cbCategoria.Items.Add("Thriller");
-            cbCategoria.Items.Add("Comédia");
-            cbCategoria.Items.Add("Ficção Cientifica");
-            cbCategoria.Items.Add("Drama");
+            this.Text = $"{nome} | Filmes"
 
             cbStatus.Items.Add("Ativo");
             cbStatus.Items.Add("Inativo");

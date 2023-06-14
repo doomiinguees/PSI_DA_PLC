@@ -33,15 +33,20 @@ namespace CineGuest
             string nome = appContext.Cinemas.First().nome;
             this.Text = $"{nome}";
 
-            DateTime dataAtual = dtpDiadeSessao.Value.Date;
+            DateTime dataAtual = dtpDiadeSessao.Value;
+            
+            List<Sessao> sessoes = appContext.Sessoes.ToList();
 
-            List<Sessao> sessoes = appContext.Sessoes.Where(s => s.Data == dataAtual).ToList();
+            Console.WriteLine(sessoes.Count());
 
             lbSessoesMain.Items.Clear();
 
             foreach (Sessao sessao in sessoes)
             {
-                lbSessoesMain.Items.Add(sessao);
+                if(dataAtual.Date == sessao.Data.Date)
+                {
+                    lbSessoesMain.Items.Add(sessao);
+                }
             }
 
             List<Funcionario> funcionarios = appContext.Funcionarios.ToList();
