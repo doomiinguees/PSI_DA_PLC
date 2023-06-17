@@ -30,6 +30,10 @@ namespace CineGuest
             Sessao sessao = appContext.Sessoes.First(s => s.id == this.bilhete.IdSessao);
             Sala sala = appContext.Salas.First(s => s.nome == sessao.Salas);
 
+            lblFilme.Text = sessao.Filmes;
+            lblSala.Text = sala.nome;
+            lblPreco.Text = $"{sessao.Preco}€ por bilhete";
+
             int coluna = sala.colunas;
             int linha = sala.linhas;
             tabSala.ColumnCount = coluna;
@@ -44,11 +48,21 @@ namespace CineGuest
                     
                     butao.Text = (char)(i + 65) + " | " + (j + 1);
                     tabSala.Controls.Add(butao, j, i);
+
+                    foreach (var item in appContext.Bilhetes)
+                    {
+                        if (item.lugar == butao.Text)
+                        {
+                            butao.BackColor = Color.Red;
+                        }
+                    }
+
                     butao.Click += Butao_Click;
                 }
             }
             tabSala.ResumeLayout();
             tabSala.AutoScroll = true;
+            UpdateCbCliente();
         }
 
         private void Butao_Click(object sender, EventArgs e)
@@ -57,6 +71,7 @@ namespace CineGuest
             if (((Button)sender).BackColor == Color.Red)
             {
                 MessageBox.Show("Ligar já ocupado");
+                return;
             }
             else
             {
@@ -74,7 +89,18 @@ namespace CineGuest
 
         private void btnFinCompra_Click(object sender, EventArgs e)
         {
-            //codigo para adicionar à base de dados os bancos ocupados
+            foreach (var item in lbBancos.Items)
+            {
+                bilhete.lugar = item.ToString();
+                bilhete.IdCliente = appContext.Clientes.First(c => c.Nome == cbCliente.Text).Id;
+                bilhete.estado = "Vendido - Não utilizado";
+                
+                appContext.Bilhetes.Add(bilhete);
+                appContext.SaveChanges();
+
+                MessageBox.Show($"Compra finalizada. Valor a pagar: {total}€");
+            }
+            
         }
 
         private void btnCreateClient_Click(object sender, EventArgs e)
@@ -82,6 +108,7 @@ namespace CineGuest
             ClienteForm cliente = new ClienteForm();
 
             cliente.ShowDialog();
+            UpdateCbCliente();
         }
 
         public void MostrarDados(Bilhete bilhete)
@@ -89,6 +116,15 @@ namespace CineGuest
             
             this.bilhete = bilhete;
             ShowDialog();
+        }
+
+        private void UpdateCbCliente()
+        {
+            foreach (var item in appContext.Clientes)
+            {
+                cbCliente.Items.Add(item.Nome);
+                
+            }
         }
     }
 }

@@ -23,7 +23,12 @@ namespace CineGuest
         private void FilmeForm_Load(object sender, EventArgs e)
         {
             string nome = appContext.Cinemas.First().nome;
-            this.Text = $"{nome} | Filmes"
+            this.Text = $"{nome} | Filmes";
+
+            foreach (var item in appContext.Categorias)
+            {
+                cbCategoria.Items.Add(item.Nome);
+            }
 
             cbStatus.Items.Add("Ativo");
             cbStatus.Items.Add("Inativo");
@@ -149,6 +154,25 @@ namespace CineGuest
             cbStatus.SelectedIndex = 1;
             lbFilme.SelectedIndex = -1;
             duracaoFilme.Value = DateTime.Parse(DateTime.Now.ToString("HH:mm:ss"));
+        }
+
+        private void btnApagarFilme_Click(object sender, EventArgs e)
+        {
+            int select = lbFilme.SelectedIndex;
+
+            if (select == -1)
+            {
+                return;
+            }
+            else
+            {
+                Filme filme = appContext.Filmes.ToList()[select];
+                appContext.Filmes.Remove(filme);
+                appContext.SaveChanges();
+
+                UpdateList();
+                ClearInputs();
+            }
         }
     }
 }

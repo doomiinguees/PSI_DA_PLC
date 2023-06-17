@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbSala = new System.Windows.Forms.ComboBox();
             this.lbSessoes = new System.Windows.Forms.ListBox();
+            this.btnApagarSessao = new System.Windows.Forms.Button();
             this.bgSessao.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -191,11 +192,22 @@
             this.lbSessoes.TabIndex = 1;
             this.lbSessoes.SelectedIndexChanged += new System.EventHandler(this.lbSessoes_SelectedIndexChanged);
             // 
+            // btnApagarSessao
+            // 
+            this.btnApagarSessao.Location = new System.Drawing.Point(806, 406);
+            this.btnApagarSessao.Name = "btnApagarSessao";
+            this.btnApagarSessao.Size = new System.Drawing.Size(121, 23);
+            this.btnApagarSessao.TabIndex = 2;
+            this.btnApagarSessao.Text = "Apagar Sessão";
+            this.btnApagarSessao.UseVisualStyleBackColor = true;
+            this.btnApagarSessao.Click += new System.EventHandler(this.btnApagarSessao_Click);
+            // 
             // SessaoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 537);
+            this.Controls.Add(this.btnApagarSessao);
             this.Controls.Add(this.lbSessoes);
             this.Controls.Add(this.bgSessao);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -224,5 +236,6 @@
         private System.Windows.Forms.TextBox tbPrecoSessao;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtaSessao;
+        private System.Windows.Forms.Button btnApagarSessao;
     }
 }

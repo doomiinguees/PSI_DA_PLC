@@ -155,5 +155,24 @@ namespace CineGuest
             tbLocalidade.Clear();
             tbCodPostal.Clear();
         }
+
+        private void btnApagarFuncionario_Click(object sender, EventArgs e)
+        {
+            int select = lbFuncionario.SelectedIndex;
+
+            if (select == -1)
+            {
+                return;
+            }
+            else
+            {
+                Funcionario funcionario = appContext.Funcionarios.ToList()[select];
+                appContext.Funcionarios.Remove(funcionario);
+                appContext.SaveChanges();
+
+                UpdateList();
+                ClearInputs();
+            }
+        }
     }
 }

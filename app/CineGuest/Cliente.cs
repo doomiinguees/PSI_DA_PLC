@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CineGuest
 {
-    internal class Cliente : Pessoa
+    public class Cliente : Pessoa
     {
         public int NIF { get; set; }
 

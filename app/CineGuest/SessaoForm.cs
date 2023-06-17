@@ -244,5 +244,23 @@ namespace CineGuest
             // Não há sobreposição de horários, a criação da sessão é permitida
             return true;
         }
+
+        private void btnApagarSessao_Click(object sender, EventArgs e)
+        {
+            int select = lbSessoes.SelectedIndex;
+            if (select == -1)
+            {
+                return;
+            }
+            else
+            {
+                Sessao sessao = appContext.Sessoes.ToList()[select];
+                appContext.Sessoes.Remove(sessao);
+                appContext.SaveChanges();
+
+                UpdateList();
+                ClearInputs();
+            }
+        }
     }
 }

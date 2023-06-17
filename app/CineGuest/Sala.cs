@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CineGuest
 {
-    internal class Sala
+    public class Sala
     {
         [Key]
         public int id { get; set; }

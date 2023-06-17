@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace CineGuest
 {
-    internal class ApplicationContext : DbContext
+    public class ApplicationContext : DbContext
     {
-        public ApplicationContext() : base("AppDB")
+        public ApplicationContext() : base("CineGuest.ApplicationContext")
         {
-            Database.SetInitializer(new ApplicationInitializer());
+            Database.SetInitializer(new ApplicationContextInitializer());
         }
 
-        public DbSet <Cinema> Cinemas { get; set; }
-        public DbSet <Sala> Salas { get; set; }
-        public DbSet <Filme> Filmes { get; set; }
-        public DbSet <Sessao> Sessoes { get; set; }
-        public DbSet <Pessoa> Pessoas{ get; set; }
-        public DbSet <Funcionario> Funcionarios { get; set; }
-        public DbSet <Cliente> Clientes{ get; set; }
-        public DbSet <Categoria> Categorias { get; set; }
-        public DbSet <Bilhete> Bilhetes{ get; set; }
+        public DbSet<Cinema> Cinemas { get; set; }
+        public DbSet<Sala> Salas { get; set; }
+        public DbSet<Filme> Filmes { get; set; }
+        public DbSet<Sessao> Sessoes { get; set; }
+        public DbSet<Pessoa> Pessoas{ get; set; }
+        public DbSet<Funcionario> Funcionarios { get; set; }
+        public DbSet<Cliente> Clientes{ get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Bilhete> Bilhetes{ get; set; }
     }
 }

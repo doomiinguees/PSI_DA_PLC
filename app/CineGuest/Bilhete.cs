@@ -15,6 +15,7 @@ namespace CineGuest
         public string estado { get; set; }
         public int IdSessao { get; set; }
         public int IdFuncionario { get; set; } 
+        public int IdCliente { get; set; }
 
         public Bilhete()
         {

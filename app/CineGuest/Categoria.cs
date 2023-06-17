@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CineGuest
 {
-    internal class Categoria
+    public class Categoria
     {
-        public string nome { get; set; }
+        [Key]
+        public int Id { get; set; }
+        public string Nome { get; set; }
 
         public Categoria()
         {
-            this.nome = null;
+
+            this.Nome = null;
         }
 
 

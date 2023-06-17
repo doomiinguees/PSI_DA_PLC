@@ -59,7 +59,6 @@
   <ItemGroup>
     <Compile Include="ApplicationContext.cs" />
     <Compile Include="ApplicationInitializer.cs" />
-    <Compile Include="ApplicationInitializerBase.cs" />
     <Compile Include="AtendimentoForm.cs">
       <SubType>Form</SubType>
     </Compile>

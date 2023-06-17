@@ -101,6 +101,18 @@ namespace CineGuest
 
                 btnAddCliente.Text = "Atualizar Cliente";
 
+                int nbilhetes = 0;
+
+                foreach (var item in appContext.Bilhetes)
+                {
+                    if (item.IdCliente == cliente.Id)
+                    {
+                        nbilhetes++;
+                    }
+                }
+
+                lblnBilhetes.Text = nbilhetes.ToString();
+
             }
         }
 
@@ -155,6 +167,25 @@ namespace CineGuest
             tbMorada.Clear();
             tbLocalidade.Clear();
             tbCodPostal.Clear();
+        }
+
+        private void btnApagarCliente_Click(object sender, EventArgs e)
+        {
+            int select = lbCliente.SelectedIndex;
+
+            if (select == -1)
+            {
+                return;
+            }
+            else
+            {
+                Cliente cliente = appContext.Clientes.ToList()[select];
+                appContext.Clientes.Remove(cliente);
+                appContext.SaveChanges();
+
+                UpdateList();
+                ClearInputs();
+            }
         }
     }
 }

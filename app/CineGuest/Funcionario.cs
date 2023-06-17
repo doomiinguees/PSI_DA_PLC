@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CineGuest
 {
-    internal class Funcionario : Pessoa
+    public class Funcionario : Pessoa
     {
         public float Salario { get; set; }
         public string Funcao { get; set; }

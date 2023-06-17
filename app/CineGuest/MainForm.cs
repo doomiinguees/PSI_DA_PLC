@@ -29,7 +29,7 @@ namespace CineGuest
                 CinemaForm cineForm = new CinemaForm();
                 cineForm.ShowDialog();
             }
-            
+
             string nome = appContext.Cinemas.First().nome;
             this.Text = $"{nome}";
 
