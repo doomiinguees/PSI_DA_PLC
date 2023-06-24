@@ -1,9 +1,14 @@
-DESENVOLVIMENTO DE APLICAÇÕES - CineGest
+
+Desenvolvimento de aplicações
+CineGuest - Projeto de gestão de um cinema
+
+![Logo](imagem.png)
 
 
-David Domingues, N.º 2220897
-Hugo Gomes, N.º 2220893
-Ruben Soares, N.º 2220900
+David Domingues, 2220897
+Hugo Gomes, 2220893
+Ruben Soares, 2220900
+
 Para executar a aplicação sem o uso do Visual Studio, siga as etapas abaixo:
 
 Abra a pasta do projeto.
