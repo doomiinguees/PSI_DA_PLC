@@ -34,3 +34,4 @@ C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\bin\Debug\Ent
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\bin\Debug\EntityFramework.xml
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.csproj.CopyComplete
+C:\Users\dadom\OneDrive\Documentos\GitHub\PSI_DA_PLC\app\CineGuest\obj\Debug\CineGuest.FormDefesa.resources

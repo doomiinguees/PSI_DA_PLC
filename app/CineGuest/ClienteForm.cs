@@ -33,7 +33,7 @@ namespace CineGuest
 
         private void btnAddCliente_Click(object sender, EventArgs e)
         {
-            string nome = tbNome.Text;
+            string nome = "DEFESA DE DA";
             string nifstr = tbNIF.Text;
             string rua = tbMorada.Text;
             string local = tbLocalidade.Text;

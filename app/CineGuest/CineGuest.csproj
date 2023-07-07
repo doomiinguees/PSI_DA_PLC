@@ -81,12 +81,19 @@
     <Compile Include="ClienteForm.Designer.cs">
       <DependentUpon>ClienteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Defesas.cs" />
     <Compile Include="Filme.cs" />
     <Compile Include="FilmeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FilmeForm.Designer.cs">
       <DependentUpon>FilmeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDefesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDefesa.Designer.cs">
+      <DependentUpon>FormDefesa.cs</DependentUpon>
     </Compile>
     <Compile Include="FunconarioForm.cs">
       <SubType>Form</SubType>
@@ -123,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FilmeForm.resx">
       <DependentUpon>FilmeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDefesa.resx">
+      <DependentUpon>FormDefesa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FunconarioForm.resx">
       <DependentUpon>FunconarioForm.cs</DependentUpon>

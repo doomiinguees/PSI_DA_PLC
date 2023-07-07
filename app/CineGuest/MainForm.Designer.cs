@@ -37,6 +37,7 @@
             this.cbUser = new System.Windows.Forms.ComboBox();
             this.dtpDiadeSessao = new System.Windows.Forms.DateTimePicker();
             this.lbSessoesMain = new System.Windows.Forms.ListBox();
+            this.defesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,8 @@
             this.filmesToolStripMenuItem,
             this.sessõesToolStripMenuItem,
             this.clientesToolStripMenuItem,
-            this.funcionáriosToolStripMenuItem});
+            this.funcionáriosToolStripMenuItem,
+            this.defesasToolStripMenuItem});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
             this.msMain.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -125,6 +127,13 @@
             this.lbSessoesMain.TabIndex = 3;
             this.lbSessoesMain.DoubleClick += new System.EventHandler(this.lbSessoesMain_DoubleClick);
             // 
+            // defesasToolStripMenuItem
+            // 
+            this.defesasToolStripMenuItem.Name = "defesasToolStripMenuItem";
+            this.defesasToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.defesasToolStripMenuItem.Text = "Defesas";
+            this.defesasToolStripMenuItem.Click += new System.EventHandler(this.defesasToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -158,6 +167,7 @@
         private System.Windows.Forms.ComboBox cbUser;
         private System.Windows.Forms.DateTimePicker dtpDiadeSessao;
         private System.Windows.Forms.ListBox lbSessoesMain;
+        private System.Windows.Forms.ToolStripMenuItem defesasToolStripMenuItem;
     }
 }
 

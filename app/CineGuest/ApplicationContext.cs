@@ -23,5 +23,6 @@ namespace CineGuest
         public DbSet<Cliente> Clientes{ get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Bilhete> Bilhetes{ get; set; }
+        public DbSet<Defesas> Defesa { get; set; }
     }
 }

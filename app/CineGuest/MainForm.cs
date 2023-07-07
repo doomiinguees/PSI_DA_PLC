@@ -139,6 +139,12 @@ namespace CineGuest
                     cbUser.Items.Add(funcionario.Nome);
             }
         }
+
+        private void defesasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDefesa formDefesa = new FormDefesa();
+            formDefesa.ShowDialog();
+        }
     }
 
 }
